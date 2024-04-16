@@ -4,7 +4,7 @@ from .models import ClinicaModel
 from .forms import ClinicaForm
  
  
-def clinicaView(request):
+def createClinicaView(request):
     # dictionary for initial data with 
     # field names as keys
     context ={}
@@ -16,3 +16,16 @@ def clinicaView(request):
          
     context['form']= form
     return render(request, "clinica_view.html", context)
+
+def displayClinicaView(request):
+
+	form_item = ClinicaForm()
+
+	# grab all Clinicas from database:
+	all_clinicas = ClinicaModel.objects.all()  
+
+	return render(request, 'display_clinica.html', 
+		{
+		'form_item': form_item,
+		'all_clinicas': all_clinicas
+		})

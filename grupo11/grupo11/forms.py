@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 from .models import AnimalModel
 from .models import AtendimentoModel
 from .models import ClinicaModel
@@ -57,6 +58,14 @@ class ClinicaForm(forms.ModelForm):
             "Clin_Veterinario",
             "Clin_CRM"
         ]
+
+        labels = {
+            'Clin_Estabelecimento': _('Estabelecimento'),
+            'Clin_Endereco': _('Endereco'),
+            'Clin_Bairro': _('Bairro'),
+            'Clin_Veterinario': _('Veterinario'),
+            'Clin_CRM': _('CRM')
+        }
 
 # criando um formulario para cada modelo
 class TutorForm(forms.ModelForm):
