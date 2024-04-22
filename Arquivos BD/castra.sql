@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Clinica` (
   `Clin_Bairro` VARCHAR(45) NOT NULL,
   `Clin_Veterinario` VARCHAR(45) NOT NULL,
   `Clin_CRM` VARCHAR(45) NOT NULL,
+  `Clin_Fone` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`idClinica`))
 ENGINE = InnoDB;
 
