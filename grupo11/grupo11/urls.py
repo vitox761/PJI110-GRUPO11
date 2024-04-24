@@ -20,6 +20,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.createClinicaView),
+    path('cadastro/clinica',views.createClinicaView),
+    path('cadastro/tutor',views.createTutorView),
+    path('cadastro/animal',views.createAnimalView),
+    path('cadastro/atendimento',views.createAtendimentoView),
     path('clinicas',views.displayClinicaView)
 ]

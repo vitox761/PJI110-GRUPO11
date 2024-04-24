@@ -7,8 +7,12 @@ class ClinicaModel(models.Model):
     Clin_Estabelecimento = models.CharField(max_length = 45)
     Clin_Endereco = models.CharField(max_length = 200)
     Clin_Bairro = models.CharField(max_length = 45)
+    Clin_Telefone = models.CharField(max_length = 20)
     Clin_Veterinario = models.CharField(max_length = 45)
     Clin_CRM = models.CharField(max_length = 45)
+
+    def __str__(self):
+        return self.Clin_Estabelecimento
 
 # declarar modelo "TutorModel"
 class TutorModel(models.Model):
@@ -21,6 +25,9 @@ class TutorModel(models.Model):
     Tut_CPF = models.CharField(max_length = 45)
     Tut_RG = models.CharField(max_length = 45)
     Tut_Ong = models.SmallIntegerField()
+
+    def __str__(self):
+        return self.Tut_Nome
 
 # declarar modelo "AnimalModel"
 class AnimalModel(models.Model):
@@ -35,13 +42,16 @@ class AnimalModel(models.Model):
     Anim_Caracteristicas = models.CharField(max_length = 200)
     Tutor_idTutor = models.ForeignKey(TutorModel, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.Anim_Nome
+
 # declarar modelo "AtendimentoModel"
 class AtendimentoModel(models.Model):
  
     # campos do modelo
     Aten_Data = models.DateField()
     Aten_Obs = models.CharField(max_length = 200)
-    Animal_idAnimal = models.IntegerField()
+    Animal_idAnimal = models.ForeignKey(AnimalModel, on_delete=models.CASCADE)
     Animal_Tutor_idTutor = models.ForeignKey(TutorModel, on_delete=models.CASCADE)
     Clinica_idClinica = models.ForeignKey(ClinicaModel, on_delete=models.CASCADE)
 
