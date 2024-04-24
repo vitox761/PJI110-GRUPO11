@@ -19,10 +19,22 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.homePageView),
     path('admin/', admin.site.urls),
-    path('cadastro/clinica',views.createClinicaView),
-    path('cadastro/tutor',views.createTutorView),
-    path('cadastro/animal',views.createAnimalView),
-    path('cadastro/atendimento',views.createAtendimentoView),
-    path('clinicas',views.displayClinicaView)
+    path('cadastro/animal',views.cadastroAnimalView, name='criar_animal'),
+    path('cadastro/atendimento',views.cadastroAtendimentoView, name='criar_atendimento'),
+    path('cadastro/clinica',views.cadastroClinicaView, name='criar_clinica'),
+    path('cadastro/tutor',views.cadastroTutorView, name='criar_tutor'),
+    path('visualizar/animal',views.visualizarAnimalView,name='visualizar_animal'),
+    path('visualizar/atendimento',views.visualizarAtendimentoView,name='visualizar_atendimento'),
+    path('visualizar/clinica',views.visualizarClinicaView,name='visualizar_clinica'),
+    path('visualizar/tutor',views.visualizarTutorView,name='visualizar_tutor'),
+    path('editar/animal/<id>',views.editarAnimalView, name='editar_animal'),
+    path('editar/atendimento/<id>',views.editarAtendimentoView, name='editar_atendimento'),
+    path('editar/clinica/<id>',views.editarClinicaView, name='editar_clinica'),
+    path('editar/tutor/<id>',views.editarTutorView, name='editar_tutor'),
+    path('deletar/animal/<id>',views.deletarAnimalView, name='deletar_animal'),
+    path('deletar/atendimento/<id>',views.deletarAtendimentoView, name='deletar_atendimento'),
+    path('deletar/clinica/<id>',views.deletarClinicaView, name='deletar_clinica'),
+    path('deletar/tutor/<id>',views.deletarTutorView, name='deletar_tutor')
 ]

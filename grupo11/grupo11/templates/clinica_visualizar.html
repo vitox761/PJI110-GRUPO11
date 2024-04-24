@@ -1,0 +1,23 @@
+<table>
+    <th>Clinicas cadastrados</th>
+    <tr>
+        <td> Nome </td>
+        <td> Endereco </td>
+        <td> Bairro </td>
+        <td> Telefone </td>
+        <td> Veterinario </td>
+        <td> CRM </td>
+    </tr>
+    {% for clinica in clinicas %}
+    <tr>
+        <td>{{ clinica.Clin_Estabelecimento }}</td>
+        <td>{{ clinica.Clin_Endereco }}</td>
+        <td>{{ clinica.Clin_Bairro }}</td>
+        <td>{{ clinica.Clin_Telefone }}</td>
+        <td>{{ clinica.Clin_Veterinario }}</td>
+        <td>{{ clinica.Clin_CRM }}</td>
+        <td><button><a href="{% url 'editar_clinica' clinica.id  %}">Editar</a></button></td>
+        <td><button> Apagar </button></td>
+    </tr>
+    {% endfor %}
+</table>

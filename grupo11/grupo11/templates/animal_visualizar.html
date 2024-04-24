@@ -1,0 +1,27 @@
+<table>
+    <th>Animais cadastrados</th>
+    <tr>
+        <td> Nome </td>
+        <td> Especie </td>
+        <td> Raça </td>
+        <td> Sexo </td>
+        <td> Idade </td>
+        <td> Peso </td>
+        <td> Caracteristicas </td>
+        <td> Tutor </td>
+    </tr>
+    {% for animal in animais %}
+    <tr>
+        <td>{{ animal.Anim_Nome }}</td>
+        <td>{{ animal.Anim_Especie }}</td>
+        <td>{{ animal.Anim_Raca }}</td>
+        <td>{{ animal.Anim_Sexo }}</td>
+        <td>{{ animal.Anim_Idade }}</td>
+        <td>{{ animal.Anim_Peso }}</td>
+        <td>{{ animal.Anim_Caracteristicas }}</td>
+        <td>{{ animal.Tutor_idTutor }}</td>
+        <td><button><a href="{% url 'editar_animal' animal.id  %}">Editar</a></button></td>
+        <td><button> Apagar </button></td>
+    </tr>
+    {% endfor %}
+</table>

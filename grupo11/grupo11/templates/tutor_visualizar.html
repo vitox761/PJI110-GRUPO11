@@ -1,0 +1,25 @@
+<table>
+    <th>Tutores cadastrados</th>
+    <tr>
+        <td> Nome </td>
+        <td> Endereco </td>
+        <td> Bairro </td>
+        <td> Telefone </td>
+        <td> CPF </td>
+        <td> RG </td>
+        <td> Ong </td>
+    </tr>
+    {% for tutor in tutores %}
+    <tr>
+        <td>{{ tutor.Tut_Nome }}</td>
+        <td>{{ tutor.Tut_Endereco }}</td>
+        <td>{{ tutor.Tut_Bairro }}</td>
+        <td>{{ tutor.Tut_Fone }}</td>
+        <td>{{ tutor.Tut_CPF }}</td>
+        <td>{{ tutor.Tut_RG }}</td>
+        <td>{{ tutor.Tut_Ong }}</td>
+        <td><button><a href="{% url 'editar_tutor' tutor.id  %}">Editar</a></button></td>
+        <td><button><a href="{% url 'deletar_tutor' tutor.id  %}">Apagar</a></button></td>
+    </tr>
+    {% endfor %}
+</table>

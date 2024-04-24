@@ -1,0 +1,4 @@
+<h1> Tutor {{ form.Tut_Nome.value }} apagado com sucesso</h1>
+<button><a href="{% url 'visualizar_tutor' %}">Visualizar lista de tutores</a></button>
+<!-- Security token -->
+{% csrf_token %}

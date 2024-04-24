@@ -1,0 +1,23 @@
+<table>
+    <th>Atendimentos cadastrados</th>
+    <tr>
+        <td> Nome </td>
+        <td> Especie </td>
+        <td> Raça </td>
+        <td> Sexo </td>
+        <td> Peso </td>
+        <td> Caracteristicas </td>
+        <td> Tutor </td>
+    </tr>
+    {% for atendimento in atendimentos %}
+    <tr>
+        <td>{{ atendimento.Aten_Data }}</td>
+        <td>{{ atendimento.Aten_Obs }}</td>
+        <td>{{ atendimento.Animal_idAnimal }}</td>
+        <td>{{ atendimento.Animal_Tutor_idTutor }}</td>
+        <td>{{ atendimento.Clinica_idClinica }}</td>
+        <td><button><a href="{% url 'editar_atendimento' atendimento.id  %}">Editar</a></button></td>
+        <td><button> Apagar </button></td>
+    </tr>
+    {% endfor %}
+</table>

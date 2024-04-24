@@ -1,0 +1,4 @@
+<h1> Animal {{ form.Anim_Nome.value }} apagado com sucesso</h1>
+<button><a href="{% url 'visualizar_animal' %}">Visualizar lista de animais</a></button>
+<!-- Security token -->
+{% csrf_token %}

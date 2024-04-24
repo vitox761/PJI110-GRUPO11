@@ -1,0 +1,26 @@
+    <h1> HOMEPAGE</h1>
+
+     
+    <table>
+        
+        <tr>
+            <td><h3>ATENDIMENTOS</h3></td>
+            <td><button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button></td>
+            <td><button><a href="{% url 'visualizar_atendimento' %}">Visualizar lista de atendimentos</a></button></td>
+        </tr>
+        <tr>
+            <td><h3>ANIMAIS</h3></td>
+            <td><button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button></td>
+            <td><button><a href="{% url 'visualizar_animal' %}">Visualizar lista de animais</a></button></td>
+        </tr>
+        <tr>
+            <td><h3>CLINICAS</h3></td>
+            <td><button><a href="{% url 'criar_clinica' %}">Criar nova clinica</a></button></td>
+            <td><button><a href="{% url 'visualizar_clinica' %}">Visualizar lista de clinicas</a></button></td>
+        </tr>
+        <tr>
+            <td><h3>TUTORES</h3></td>
+            <td><button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button></td>
+            <td><button><a href="{% url 'visualizar_tutor' %}">Visualizar lista de tutores</a></button></td>
+        </tr>
+    </table>
