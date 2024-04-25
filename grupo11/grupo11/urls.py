@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', views.homePageView),
@@ -36,5 +37,6 @@ urlpatterns = [
     path('deletar/animal/<id>',views.deletarAnimalView, name='deletar_animal'),
     path('deletar/atendimento/<id>',views.deletarAtendimentoView, name='deletar_atendimento'),
     path('deletar/clinica/<id>',views.deletarClinicaView, name='deletar_clinica'),
-    path('deletar/tutor/<id>',views.deletarTutorView, name='deletar_tutor')
+    path('deletar/tutor/<id>',views.deletarTutorView, name='deletar_tutor'),
+    path('favicon.ico', RedirectView.as_view(url='/static/images/pet-icon.ico'))
 ]

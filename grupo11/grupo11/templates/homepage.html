@@ -1,26 +1,44 @@
-    <h1> HOMEPAGE</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-     
-    <table>
-        
-        <tr>
-            <td><h3>ATENDIMENTOS</h3></td>
-            <td><button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button></td>
-            <td><button><a href="{% url 'visualizar_atendimento' %}">Visualizar lista de atendimentos</a></button></td>
-        </tr>
-        <tr>
-            <td><h3>ANIMAIS</h3></td>
-            <td><button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button></td>
-            <td><button><a href="{% url 'visualizar_animal' %}">Visualizar lista de animais</a></button></td>
-        </tr>
-        <tr>
-            <td><h3>CLINICAS</h3></td>
-            <td><button><a href="{% url 'criar_clinica' %}">Criar nova clinica</a></button></td>
-            <td><button><a href="{% url 'visualizar_clinica' %}">Visualizar lista de clinicas</a></button></td>
-        </tr>
-        <tr>
-            <td><h3>TUTORES</h3></td>
-            <td><button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button></td>
-            <td><button><a href="{% url 'visualizar_tutor' %}">Visualizar lista de tutores</a></button></td>
-        </tr>
-    </table>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castração Marília - SP</title>
+    <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage_style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="header">
+                <h1> Castração Marília - SP</h1>
+                <div class="input-group">
+                    <div class="input-box">
+                        <h3>Atendimentos</h3>
+                        <button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button>
+                        <button><a href="{% url 'visualizar_atendimento' %}">Acessar lista de atendimentos</a></button>
+                    </div>
+                    <div class="input-box">
+                        <h3>Animais</h3>
+                        <button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button>
+                        <button><a href="{% url 'visualizar_animal' %}">Acessar lista de animais</a></button>
+                    </div>
+                    <div class="input-box">
+                        <h3>Clínicas</h3>
+                        <button><a href="{% url 'criar_clinica' %}">Criar nova clínica</a></button>
+                        <button><a href="{% url 'visualizar_clinica' %}">Acessar lista de clínicas</a></button>
+                    </div>
+                    <div class="input-box">
+                        <h3>Tutores</h3>
+                        <button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button>
+                        <button><a href="{% url 'visualizar_tutor' %}">Acessar lista de tutores</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
