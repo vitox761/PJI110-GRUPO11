@@ -1,124 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* Estilos para todos os elementos */
+/* Resetar o CSS */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
     font-family: "Outfit", sans-serif;
 }
 
-h1 {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-
-/* Estilos para o corpo da página */
 body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
+    font-size: 100%;
+    background: #F5F5F5;
 }
 
-/* Estilos para o contêiner principal */
-.container {
-    width: 100%;
-    height: 100vh;
+.cabecalho {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-}
-
-/* Estilos para o grupo de entrada */
-.input-group {
-    display: flex;
-    flex-wrap: none;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 1.3rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
 }
 
-/* Estilos para a caixa de entrada */
-.input-box {
-    width: 100%;
+.cabecalho-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.cabecalho-menu-item {
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+}
+
+.conteudo {
+    margin-bottom: 48px;
+    border-top: 0.4px solid #578ab4;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo-principal-escrito {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    padding: 2rem 3rem;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 1px 1px 6px #0000001c;
+    gap: 32px;
 }
 
-.input-box h3 {
-    text-align: center; /* Centraliza o texto horizontalmente */
+.conteudo-principal-escrito-titulo {
+    font-weight: 700;
+    font-size: 64px;
+    color: #578ab4;
 }
 
-.input-box input:hover {
-    background-color: #eeeeee75;
+.conteudo-principal-escrito-subtitulo {
+    font-weight: 400;
+    font-size: 24px;
 }
 
-.input-box input:focus-visible {
-    outline: 1px solid #4682B4;
-}
-
-/* Estilizando os botões */
-button {
-    border: none;
+.conteudo-principal-escrito-botao {
     background-color: #578ab4;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease-in-out;
+    width: 200px;
+    height: 50px;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.4s ease;
+}
+
+.conteudo-principal-escrito-botao:hover {
+    background-color: #4c7ca8;
+}
+
+.conteudo-principal-escrito-botao-link {
+    color: white;
     text-decoration: none;
     display: inline-block;
-    margin-top: 10px;
-    width: 300px;
-    line-height: 20px;
-    /* Altura da caixa */
-}
-
-button:hover {
-    background-color: #7ea3c1;
-}
-
-/* Estilo para os links dentro dos botões */
-button a {
-    color: inherit;
-    /* Herda a cor do texto do botão */
-    text-decoration: none;
-    /* Remove o sublinhado padrão do link */
-}
-
-button:hover a {
-    text-decoration: underline;
-    /* Adiciona sublinhado ao passar o mouse sobre o link */
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
 }
 
 
-/* Mídia para dispositivos menores */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-        overflow-y: auto;
-    }
+.conteudo-principal-imagem {
+    width: 30%;
+}
 
-    .fake-box {
-        width: 90%;
-        padding: 1rem;
-    }
+.conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+}
 
-    .input-box {
-        width: 90%;
-    }
+.conteudo-secundario-titulo {
+    border-top: 0.4px solid #578ab4;
+    padding-top: 35px;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #578ab4;
+}
+
+.conteudo-secundario-paragrafo {
+    font-weight: 400;
+    font-size: 17px;
 }

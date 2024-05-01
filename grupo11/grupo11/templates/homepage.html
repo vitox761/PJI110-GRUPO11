@@ -6,39 +6,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castração Marília - SP</title>
+    <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
     <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/homepage_style.css' %}">
+    <title>Castração Marília - SP</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="form">
-            <div class="header">
-                <h1> Castração Marília - SP</h1>
-                <div class="input-group">
-                    <div class="input-box">
-                        <h3>Atendimentos</h3>
-                        <button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button>
-                        <button><a href="{% url 'visualizar_atendimento' %}">Acessar lista de atendimentos</a></button>
-                    </div>
-                    <div class="input-box">
-                        <h3>Animais</h3>
-                        <button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button>
-                        <button><a href="{% url 'visualizar_animal' %}">Acessar lista de animais</a></button>
-                    </div>
-                    <div class="input-box">
-                        <h3>Clínicas</h3>
-                        <button><a href="{% url 'criar_clinica' %}">Criar nova clínica</a></button>
-                        <button><a href="{% url 'visualizar_clinica' %}">Acessar lista de clínicas</a></button>
-                    </div>
-                    <div class="input-box">
-                        <h3>Tutores</h3>
-                        <button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button>
-                        <button><a href="{% url 'visualizar_tutor' %}">Acessar lista de tutores</a></button>
-                    </div>
-                </div>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item">Entenda como funciona</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+
+    </header>
+
+    <main class="conteudo">
+        <section class="conteudo-principal">
+            <div class="conteudo-principal-escrito">
+                <h1 class="conteudo-principal-escrito-titulo">Castração de baixo-custo</h1>
+                <h2 class="conteudo-principal-escrito-subtitulo">Agende a castração do seu animal em uma das clínicas
+                    conveniadas em Marília - SP.</h2>
+                <button class="conteudo-principal-escrito-botao">
+                    <a href="{% url 'criar_atendimento' %}" class="conteudo-principal-escrito-botao-link">
+                        Solicitar castração
+                    </a>
+                </button>
+
             </div>
-        </div>
-    </div>
+            <img class="conteudo-principal-imagem" src="{% static 'images/cat-dog-round.png' %}"
+                alt="Imagem gato e cachorro">
+        </section>
+
+        <section class="conteudo-secundario">
+            <h3 class="conteudo-secundario-titulo">Por que castrar o seu pet?</h3>
+            <p class="conteudo-secundario-paragrafo">1. <strong>Controle da população:</strong> A castração ajuda a
+                evitar a superpopulação de animais,
+                reduzindo o número de
+                animais
+                abandonados e sofrendo nas ruas.</p>
+            <p class="conteudo-secundario-paragrafo">2. <strong>Saúde e bem-estar:</strong> Reduz o risco de doenças
+                graves, como câncer de mama e problemas
+                uterinos, além de
+                comportamentos indesejados relacionados ao cio.</p>
+            <p class="conteudo-secundario-paragrafo">3. <strong>Comportamento tranquilo:</strong> Diminui comportamentos
+                agressivos e marcação de território,
+                tornando o pet
+                mais
+                calmo e sociável.</p>
+        </section>
+    </main>
+
 </body>
+
+</html>
