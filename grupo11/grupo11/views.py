@@ -14,6 +14,11 @@ def homePageView(request):
          
     return render(request, "homepage.html")
 
+def adminPageView(request):
+    context ={}
+         
+    return render(request, "admin.html")
+
 def cadastroClinicaView(request):
     context ={}
 
