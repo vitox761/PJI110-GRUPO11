@@ -32,6 +32,12 @@ body {
     font-weight: 400;
     font-size: 18px;
     color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cabecalho-menu-item:hover {
+    color: #578ab4;
 }
 
 .conteudo {
@@ -116,4 +122,35 @@ body {
 .conteudo-secundario-paragrafo {
     font-weight: 400;
     font-size: 17px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .conteudo-principal-imagem {
+        display: none;
+    }
+
+    .conteudo-principal-escrito {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 20px;
+    }
+
+    .conteudo-secundario {
+        padding: 0 20px;
+        /* Adiciona espaçamento de 20px nas margens laterais */
+    }
+
+    .conteudo-secundario-titulo {
+        font-size: 24px;
+        /* Reduz o tamanho do título */
+    }
+
+    .conteudo-secundario-paragrafo {
+        font-size: 16px;
+        /* Reduz o tamanho do texto */
+        text-align: justify;
+        /* Justifica o texto */
+    }
 }
