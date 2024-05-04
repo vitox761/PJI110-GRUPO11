@@ -1,23 +1,51 @@
-<table>
-    <th>Atendimentos cadastrados</th>
-    <tr>
-        <td> Nome </td>
-        <td> Especie </td>
-        <td> Raça </td>
-        <td> Sexo </td>
-        <td> Peso </td>
-        <td> Caracteristicas </td>
-        <td> Tutor </td>
-    </tr>
-    {% for atendimento in atendimentos %}
-    <tr>
-        <td>{{ atendimento.Aten_Data }}</td>
-        <td>{{ atendimento.Aten_Obs }}</td>
-        <td>{{ atendimento.Animal_idAnimal }}</td>
-        <td>{{ atendimento.Animal_Tutor_idTutor }}</td>
-        <td>{{ atendimento.Clinica_idClinica }}</td>
-        <td><button><a href="{% url 'editar_atendimento' atendimento.id  %}">Editar</a></button></td>
-        <td><button> Apagar </button></td>
-    </tr>
-    {% endfor %}
-</table>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-100">
+
+
+<body>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+        <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/tutor_visualizar.css' %}">
+        <title>Acessar atendimentos</title>
+    </head>
+
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+    </header>
+
+    <div class="tabela-container">
+        <table>
+            <th colspan="9">Atendimentos cadastrados</th>
+            <tr>
+                <td class="titulo-coluna"> Data </td>
+                <td class="titulo-coluna"> Observações </td>
+                <td class="titulo-coluna"> Animal </td>
+                <td class="titulo-coluna"> Tutor </td>
+                <td class="titulo-coluna"> Clinica </td>
+            </tr>
+            {% for atendimento in atendimentos %}
+            <tr>
+                <td>{{ atendimento.Aten_Data }}</td>
+                <td>{{ atendimento.Aten_Obs }}</td>
+                <td>{{ atendimento.Animal_idAnimal }}</td>
+                <td>{{ atendimento.Animal_Tutor_idTutor }}</td>
+                <td>{{ atendimento.Clinica_idClinica }}</td>
+                <td><button><a href="{% url 'editar_atendimento' atendimento.id  %}">Editar</a></button></td>
+                <td><button> Apagar </button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

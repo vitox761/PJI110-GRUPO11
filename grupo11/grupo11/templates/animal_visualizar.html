@@ -1,27 +1,56 @@
-<table>
-    <th>Animais cadastrados</th>
-    <tr>
-        <td> Nome </td>
-        <td> Especie </td>
-        <td> Raça </td>
-        <td> Sexo </td>
-        <td> Idade </td>
-        <td> Peso </td>
-        <td> Caracteristicas </td>
-        <td> Tutor </td>
-    </tr>
-    {% for animal in animais %}
-    <tr>
-        <td>{{ animal.Anim_Nome }}</td>
-        <td>{{ animal.Anim_Especie }}</td>
-        <td>{{ animal.Anim_Raca }}</td>
-        <td>{{ animal.Anim_Sexo }}</td>
-        <td>{{ animal.Anim_Idade }}</td>
-        <td>{{ animal.Anim_Peso }}</td>
-        <td>{{ animal.Anim_Caracteristicas }}</td>
-        <td>{{ animal.Tutor_idTutor }}</td>
-        <td><button><a href="{% url 'editar_animal' animal.id  %}">Editar</a></button></td>
-        <td><button> Apagar </button></td>
-    </tr>
-    {% endfor %}
-</table>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-100">
+
+<body>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+        <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/tutor_visualizar.css' %}">
+        <title>Acessar atendimentos</title>
+    </head>
+
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+    </header>
+
+    <div class="tabela-container">
+        <table>
+            <th colspan="10">Animais cadastrados</th>
+            <tr>
+                <td class="titulo-coluna"> Nome </td>
+                <td class="titulo-coluna"> Especie </td>
+                <td class="titulo-coluna"> Raça </td>
+                <td class="titulo-coluna"> Sexo </td>
+                <td class="titulo-coluna"> Idade </td>
+                <td class="titulo-coluna"> Peso </td>
+                <td class="titulo-coluna"> Caracteristicas </td>
+                <td class="titulo-coluna"> Tutor </td>
+            </tr>
+            {% for animal in animais %}
+            <tr>
+                <td>{{ animal.Anim_Nome }}</td>
+                <td>{{ animal.Anim_Especie }}</td>
+                <td>{{ animal.Anim_Raca }}</td>
+                <td>{{ animal.Anim_Sexo }}</td>
+                <td>{{ animal.Anim_Idade }}</td>
+                <td>{{ animal.Anim_Peso }}</td>
+                <td>{{ animal.Anim_Caracteristicas }}</td>
+                <td>{{ animal.Tutor_idTutor }}</td>
+                <td><button><a href="{% url 'editar_animal' animal.id  %}">Editar</a></button></td>
+                <td><button> Apagar </button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

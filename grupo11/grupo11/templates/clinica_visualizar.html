@@ -1,23 +1,52 @@
-<table>
-    <th>Clinicas cadastrados</th>
-    <tr>
-        <td> Nome </td>
-        <td> Endereco </td>
-        <td> Bairro </td>
-        <td> Telefone </td>
-        <td> Veterinario </td>
-        <td> CRM </td>
-    </tr>
-    {% for clinica in clinicas %}
-    <tr>
-        <td>{{ clinica.Clin_Estabelecimento }}</td>
-        <td>{{ clinica.Clin_Endereco }}</td>
-        <td>{{ clinica.Clin_Bairro }}</td>
-        <td>{{ clinica.Clin_Telefone }}</td>
-        <td>{{ clinica.Clin_Veterinario }}</td>
-        <td>{{ clinica.Clin_CRM }}</td>
-        <td><button><a href="{% url 'editar_clinica' clinica.id  %}">Editar</a></button></td>
-        <td><button> Apagar </button></td>
-    </tr>
-    {% endfor %}
-</table>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+    <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tutor_visualizar.css' %}">
+    <title>Clínicas cadastradas</title>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+    </header>
+
+    <div class="tabela-container">
+        <table>
+            <th colspan="8">Clínicas cadastradas</th>
+            <tr>
+                <td class="titulo-coluna"> Nome </td>
+                <td class="titulo-coluna"> Endereco </td>
+                <td class="titulo-coluna"> Bairro </td>
+                <td class="titulo-coluna"> Telefone </td>
+                <td class="titulo-coluna"> Veterinario </td>
+                <td class="titulo-coluna"> CRM </td>
+            </tr>
+            {% for clinica in clinicas %}
+            <tr>
+                <td>{{ clinica.Clin_Estabelecimento }}</td>
+                <td>{{ clinica.Clin_Endereco }}</td>
+                <td>{{ clinica.Clin_Bairro }}</td>
+                <td>{{ clinica.Clin_Telefone }}</td>
+                <td>{{ clinica.Clin_Veterinario }}</td>
+                <td>{{ clinica.Clin_CRM }}</td>
+                <td><button><a href="{% url 'editar_clinica' clinica.id  %}">Editar</a></button></td>
+                <td><button> Apagar </button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

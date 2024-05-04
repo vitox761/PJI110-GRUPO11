@@ -30,6 +30,7 @@ class AnimalForm(forms.ModelForm):
             "Anim_Nome": _("Nome"),
             "Anim_Especie": _("Especie"),
             "Anim_Raca": _("Raça"),
+            "Anim_Idade": _("Idade do animal"),
             "Anim_Sexo": _("Sexo"),
             "Anim_Peso": _("Peso"),
             "Anim_Caracteristicas": _("Caracteristicas"),
@@ -87,7 +88,7 @@ class ClinicaForm(forms.ModelForm):
             "Clin_Bairro": _("Bairro"),
             "Clin_Telefone": _("Telefone"),
             "Clin_Veterinario": _("Veterinario"),
-            "Clin_CRM": _("CRM"),
+            "Clin_CRM": _("CRM-SP/N°"),
         }
 
 
@@ -117,5 +118,5 @@ class TutorForm(forms.ModelForm):
             "Tut_Fone": _("Telefone"),
             "Tut_CPF": _("CPF"),
             "Tut_RG": _("RG"),
-            "Tut_Ong": _("Ong"),
+            "Tut_Ong": _("É para uma ONG?"),
         }

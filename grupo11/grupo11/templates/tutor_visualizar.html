@@ -1,25 +1,54 @@
-<table>
-    <th>Tutores cadastrados</th>
-    <tr>
-        <td> Nome </td>
-        <td> Endereco </td>
-        <td> Bairro </td>
-        <td> Telefone </td>
-        <td> CPF </td>
-        <td> RG </td>
-        <td> Ong </td>
-    </tr>
-    {% for tutor in tutores %}
-    <tr>
-        <td>{{ tutor.Tut_Nome }}</td>
-        <td>{{ tutor.Tut_Endereco }}</td>
-        <td>{{ tutor.Tut_Bairro }}</td>
-        <td>{{ tutor.Tut_Fone }}</td>
-        <td>{{ tutor.Tut_CPF }}</td>
-        <td>{{ tutor.Tut_RG }}</td>
-        <td>{{ tutor.Tut_Ong }}</td>
-        <td><button><a href="{% url 'editar_tutor' tutor.id  %}">Editar</a></button></td>
-        <td><button><a href="{% url 'deletar_tutor' tutor.id  %}">Apagar</a></button></td>
-    </tr>
-    {% endfor %}
-</table>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+    <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tutor_visualizar.css' %}">
+    <title>Tutores cadastrados</title>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+    </header>
+
+    <div class="tabela-container">
+        <table>
+            <th colspan="10">Tutores cadastrados</th>
+            <tr>
+                <td class="titulo-coluna"> Nome </td>
+                <td class="titulo-coluna"> Endereco </td>
+                <td class="titulo-coluna"> Bairro </td>
+                <td class="titulo-coluna"> Telefone </td>
+                <td class="titulo-coluna"> CPF </td>
+                <td class="titulo-coluna"> RG </td>
+                <td class="titulo-coluna"> ONG </td>
+            </tr>
+            {% for tutor in tutores %}
+            <tr>
+                <td>{{ tutor.Tut_Nome }}</td>
+                <td>{{ tutor.Tut_Endereco }}</td>
+                <td>{{ tutor.Tut_Bairro }}</td>
+                <td>{{ tutor.Tut_Fone }}</td>
+                <td>{{ tutor.Tut_CPF }}</td>
+                <td>{{ tutor.Tut_RG }}</td>
+                <td>{{ tutor.Tut_Ong }}</td>
+                <td><button><a href="{% url 'editar_tutor' tutor.id  %}">Editar</a></button></td>
+                <td><button><a href="{% url 'deletar_tutor' tutor.id  %}">Apagar</a></button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
