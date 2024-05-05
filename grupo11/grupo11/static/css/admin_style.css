@@ -13,7 +13,7 @@
 
 body {
     font-size: 100%;
-    background: #F5F5F5;
+    background: white;
 }
 
 .cabecalho {
@@ -83,7 +83,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.3rem;
+    padding: 1.4rem;
 }
 
 /* Estilos para a caixa de entrada */
@@ -96,7 +96,7 @@ body {
     margin-right: 20px;
     padding: 2rem 3rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 1px 1px 6px #0000001c;
 }
 
@@ -126,7 +126,7 @@ button {
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
-    width: 300px;
+    width: 260px;
     line-height: 20px;
 }
 
@@ -150,7 +150,6 @@ button a {
     margin-bottom: 48px;
 }
 
-/* Mídia para dispositivos menores */
 @media screen and (max-width: 1366px) {
     .cabecalho-menu {
         flex-direction: row;
@@ -167,4 +166,15 @@ button a {
         display: none;
     }
 
+    .input-group {
+        margin-top: 300px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-box {
+        width: 90%;
+        margin-bottom: none;
+        /* Adiciona espaço entre as caixas de entrada */
+    }
 }

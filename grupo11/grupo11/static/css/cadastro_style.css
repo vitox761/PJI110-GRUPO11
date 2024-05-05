@@ -42,9 +42,6 @@ html {
 .conteudo-principal {
     margin-bottom: 48px;
     border-top: 0.4px solid #578ab4;
-}
-
-.conteudo-principal {
     display: flex;
     flex-direction: row;
     margin-top: none;
@@ -74,8 +71,8 @@ html {
     background-color: white;
     padding: 40px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     max-width: 700px;
     margin: 0 auto;
 }
@@ -104,10 +101,10 @@ html {
     background-color: #578ab4;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px;
     cursor: pointer;
     border-radius: 20px;
-    width: 300px;
+    width: 250px;
     display: block;
     margin: 0 auto;
     font-weight: 600;

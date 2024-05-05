@@ -15,9 +15,9 @@
 <body>
     <header class="cabecalho">
         <nav class="cabecalho-menu">
-            <a class="cabecalho-menu-item">Entenda como funciona</a>
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
             <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-            <a class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'criar_tutor' %}" class="cabecalho-menu-item">Solicitar castração</a>
         </nav>
     </header>
 

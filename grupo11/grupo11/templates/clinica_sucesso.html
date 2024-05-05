@@ -1,4 +1,39 @@
-<h1> Clinica {{ form.Clin_Estabelecimento.value }} criado com sucesso</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<!-- Security token -->
-{% csrf_token %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+    <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sucesso_style.css' %}">
+    <title>Sucesso!</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            <a href="{% url 'criar_tutor' %}" class="cabecalho-menu-item">Solicitar castração</a>
+        </nav>
+    </header>
+
+    <main class="mensagem">
+
+        <h1> Clínica {{ form.Clin_Estabelecimento.value }} criada com sucesso!</h1>
+        <button class="botao-voltar"><a href="{% url 'visualizar_clinica' %}" class="botao-voltar-link">
+                Voltar
+            </a>
+        </button>
+        <!-- Security token -->
+        {% csrf_token %}
+    </main>
+
+    <section class="imagem-sucesso">
+        <img src="{% static 'images/dog-pc.png' %}" alt="Imagem de sucesso" class="imagem-sucesso">
+    </section>
+
+</body>

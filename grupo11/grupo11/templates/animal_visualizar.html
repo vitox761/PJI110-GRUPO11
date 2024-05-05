@@ -10,15 +10,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
         <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/tutor_visualizar.css' %}">
-        <title>Acessar atendimentos</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
+        <title>Animais cadastrados</title>
     </head>
 
     <header class="cabecalho">
         <nav class="cabecalho-menu">
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
             <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-            <a class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'criar_tutor' %}" class="cabecalho-menu-item">Solicitar castração</a>
         </nav>
     </header>
 
