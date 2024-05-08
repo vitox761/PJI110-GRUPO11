@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # declarar modelo "ClinicaModel"
 class ClinicaModel(models.Model):
@@ -16,7 +17,11 @@ class ClinicaModel(models.Model):
 
 # declarar modelo "TutorModel"
 class TutorModel(models.Model):
- 
+    
+    class Ong(models.IntegerChoices):
+        NAO = (0, _('Não'))
+        SIM = (1, _('Sim'))
+
     # campos do modelo
     Tut_Nome = models.CharField(max_length = 200)
     Tut_Endereco = models.CharField(max_length = 200)
@@ -24,7 +29,10 @@ class TutorModel(models.Model):
     Tut_Fone = models.CharField(max_length = 45)
     Tut_CPF = models.CharField(max_length = 45)
     Tut_RG = models.CharField(max_length = 45)
-    Tut_Ong = models.SmallIntegerField()
+    Tut_Ong = models.SmallIntegerField(
+        choices=Ong.choices,
+        default=Ong.NAO
+    )
 
     def __str__(self):
         return self.Tut_Nome

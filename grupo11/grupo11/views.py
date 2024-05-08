@@ -42,7 +42,7 @@ def cadastroAnimalView(request):
         form.save()
     else:
         print(form.errors)
-         
+
     context['form']= form
     if request.method == 'POST':
         return render(request,'animal_sucesso.html',context)
@@ -93,7 +93,7 @@ def visualizarClinicaView(request):
 def visualizarTutorView(request):
 
 	form_item = TutorForm()
-	tutores = TutorModel.objects.all()  
+	tutores = TutorModel.objects.all()
 
 	return render(request, 'tutor_visualizar.html', 
 		{
@@ -207,3 +207,61 @@ def deletarTutorView(request,id):
     TutorModel.objects.filter(id=id).delete()
 
     return render(request, 'tutor_deletar.html',context)
+
+def solicitarAtendimentoPasso1View(request):
+    context ={}
+ 
+    form = TutorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    else:
+        print(form.errors)
+         
+    context['form']= form
+    if request.method == 'POST':
+        return render(request,'passo1_sucesso.html',context)
+    else:
+        return render(request, "passo1_cadastro.html", context)
+    
+def solicitarAtendimentoPasso2View(request):
+    context ={}
+ 
+    lastTutor = TutorModel.objects.last()
+
+    form = AnimalForm(request.POST or None)
+    form.fields['Tutor_idTutor'].initial = lastTutor.id
+
+    if form.is_valid():
+        form.save()
+    else:
+        print(form.errors)
+         
+    context['form']= form
+    if request.method == 'POST':
+        
+        print(form.errors)
+        return render(request,'passo2_sucesso.html',context)
+    else:
+        return render(request, "passo2_cadastro.html", context)
+    
+def solicitarAtendimentoPasso3View(request):
+    context ={}
+ 
+    lastTutor = TutorModel.objects.last()
+    lastAnimal = AnimalModel.objects.last()
+
+    form = AtendimentoForm(request.POST or None)
+    form.fields['Animal_Tutor_idTutor'].initial = lastTutor.id
+    form.fields['Animal_idAnimal'].initial = lastAnimal.id
+
+
+    if form.is_valid():
+        form.save()
+    else:
+        print(form.errors)
+         
+    context['form']= form
+    if request.method == 'POST':
+        return render(request,'passo3_sucesso.html',context)
+    else:
+        return render(request, "passo3_cadastro.html", context)

@@ -18,7 +18,7 @@
         <nav class="cabecalho-menu">
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
             <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-            <a href="{% url 'criar_tutor' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
         </nav>
     </header>
 
@@ -42,7 +42,7 @@
                 <td>{{ tutor.Tut_Fone }}</td>
                 <td>{{ tutor.Tut_CPF }}</td>
                 <td>{{ tutor.Tut_RG }}</td>
-                <td>{{ tutor.Tut_Ong }}</td>
+                <td>{{ tutor.get_Tut_Ong_display }}</td>
                 <td><button><a href="{% url 'editar_tutor' tutor.id  %}">Editar</a></button></td>
                 <td><button><a href="{% url 'deletar_tutor' tutor.id  %}">Apagar</a></button></td>
             </tr>

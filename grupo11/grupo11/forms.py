@@ -62,6 +62,9 @@ class AtendimentoForm(forms.ModelForm):
             "Animal_Tutor_idTutor": _("Tutor"),
             "Clinica_idClinica": _("Clinica"),
         }
+        widgets = {
+            'Aten_Data': forms.widgets.DateInput(format=('%Y-%m-%d'),attrs={'type': 'date'})
+        }
 
 
 # criando um formulario para cada modelo
@@ -120,3 +123,4 @@ class TutorForm(forms.ModelForm):
             "Tut_RG": _("RG"),
             "Tut_Ong": _("É para uma ONG?"),
         }
+            

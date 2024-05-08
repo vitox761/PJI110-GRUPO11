@@ -39,5 +39,8 @@ urlpatterns = [
     path('deletar/atendimento/<id>',views.deletarAtendimentoView, name='deletar_atendimento'),
     path('deletar/clinica/<id>',views.deletarClinicaView, name='deletar_clinica'),
     path('deletar/tutor/<id>',views.deletarTutorView, name='deletar_tutor'),
-    path('favicon.ico', RedirectView.as_view(url='/static/images/pet-icon.ico'))
+    path('favicon.ico', RedirectView.as_view(url='/static/images/pet-icon.ico')),
+    path('solicitar/passo1',views.solicitarAtendimentoPasso1View, name='atendimento_passo1'),
+    path('solicitar/passo2',views.solicitarAtendimentoPasso2View, name='atendimento_passo2'),
+    path('solicitar/passo3',views.solicitarAtendimentoPasso3View, name='atendimento_passo3')
 ]

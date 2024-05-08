@@ -18,7 +18,7 @@
         <nav class="cabecalho-menu">
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
             <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-            <a href="{% url 'criar_tutor' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
         </nav>
     </header>
 
@@ -42,7 +42,7 @@
                 <td>{{ clinica.Clin_Veterinario }}</td>
                 <td>{{ clinica.Clin_CRM }}</td>
                 <td><button><a href="{% url 'editar_clinica' clinica.id  %}">Editar</a></button></td>
-                <td><button> Apagar </button></td>
+                <td><button><a href="{% url 'deletar_clinica' clinica.id  %}"> Apagar </a></button></td>
             </tr>
             {% endfor %}
         </table>
