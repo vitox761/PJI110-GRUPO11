@@ -30,9 +30,9 @@ class AnimalForm(forms.ModelForm):
             "Anim_Nome": _("Nome"),
             "Anim_Especie": _("Especie"),
             "Anim_Raca": _("Raça"),
-            "Anim_Idade": _("Idade do animal"),
+            "Anim_Idade": _("Idade do animal (Anos)"),
             "Anim_Sexo": _("Sexo"),
-            "Anim_Peso": _("Peso"),
+            "Anim_Peso": _("Peso (KG)"),
             "Anim_Caracteristicas": _("Caracteristicas"),
             "Tutor_idTutor": _("Tutor"),
         }

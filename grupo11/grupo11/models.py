@@ -40,14 +40,22 @@ class TutorModel(models.Model):
 # declarar modelo "AnimalModel"
 class AnimalModel(models.Model):
  
+    class Especies(models.TextChoices):
+        CAO = ("Canino", _('Canino'))
+        GATO = ("Felino", _('Felino'))
+
+    class Sexos(models.TextChoices):
+        MACHO = ("Macho", _('Macho'))
+        FEMEA = ("Fêmea", _('Fêmea'))
+
     # campos do modelo
     Anim_Nome = models.CharField(max_length = 45)
-    Anim_Especie = models.CharField(max_length = 45)
+    Anim_Especie = models.CharField(max_length = 45, choices = Especies.choices, default = Especies.CAO)
     Anim_Raca = models.CharField(max_length = 45)
-    Anim_Sexo = models.CharField(max_length = 45)
+    Anim_Sexo = models.CharField(max_length = 45, choices = Sexos.choices, default = Sexos.MACHO)
     Anim_Idade = models.IntegerField()
     Anim_Peso = models.DecimalField(max_digits = 3, decimal_places = 2)
-    Anim_Caracteristicas = models.CharField(max_length = 200)
+    Anim_Caracteristicas = models.CharField(max_length = 200, blank = True, default = '')
     Tutor_idTutor = models.ForeignKey(TutorModel, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -57,8 +65,8 @@ class AnimalModel(models.Model):
 class AtendimentoModel(models.Model):
  
     # campos do modelo
-    Aten_Data = models.DateField()
-    Aten_Obs = models.CharField(max_length = 200)
+    Aten_Data = models.DateField(blank = True, null = True)
+    Aten_Obs = models.CharField(max_length = 200, blank = True, default = '')
     Animal_idAnimal = models.ForeignKey(AnimalModel, on_delete=models.CASCADE)
     Animal_Tutor_idTutor = models.ForeignKey(TutorModel, on_delete=models.CASCADE)
     Clinica_idClinica = models.ForeignKey(ClinicaModel, on_delete=models.CASCADE)

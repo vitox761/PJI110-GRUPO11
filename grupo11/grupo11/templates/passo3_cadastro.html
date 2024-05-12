@@ -20,6 +20,12 @@
         #div_id_Animal_idAnimal {
             display: none;
         }
+        #div_id_Aten_Data {
+            display: none;
+        }
+        #div_id_Aten_Obs {
+            display: none;
+        }
     </style>
 </head>
 
@@ -37,7 +43,7 @@
         <div class="conteudo-principal">
             <form method="POST" enctype="multipart/form-data" class="formulario">
                 <fieldset>
-                    <legend><strong> Cadastrar novo atendimento</strong></legend>
+                    <legend><strong> Escolha sua clínica preferida</strong></legend>
                     <!-- Security token -->
                     {% csrf_token %}
                     <!-- Using the formset -->
