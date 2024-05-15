@@ -79,10 +79,10 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "castracaomariliapi11-database",
-        "USER": "rweuegjfij",
-        "PASSWORD": "ITw6$RjuvC$wGPM0",
-        "HOST": "castracaomariliapi11-server.mysql.database.azure.com",
+        "NAME": "pi11castraanimalmarilia-database",
+        "USER": "ygywihocpa",
+        "PASSWORD": "az437$ufWjr12Dw1",
+        "HOST": "localhost",
         "PORT": "3306",
     }
 }
