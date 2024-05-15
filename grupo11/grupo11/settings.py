@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 1
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = localhost [::1] pi11castraanimalmarilia.azurewebsites.net
+CSRF_TRUESTED_ORIGINS = "https://pi11castraanimalmarilia.azurewebsites.net"
+SECURE_SSL_REDIRECT = 0
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,7 +82,7 @@ DATABASES = {
         "NAME": "pi11castraanimalmarilia-database",
         "USER": "ygywihocpa",
         "PASSWORD": "az437$ufWjr12Dw1",
-        "HOST": "localhost",
+        "HOST": "pi11castraanimalmarilia-server.mysql.database.azure.com",
         "PORT": "3306",
     }
 }
