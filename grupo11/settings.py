@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "grupo11",
     "crispy_forms",
     "crispy_bootstrap5",
+    "whitenoise.runserver_nostatic"
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = "grupo11.urls"
@@ -123,14 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "grupo11/static",
-]
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
+STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", "./static/")
+STATICFILES_DIRS = [os.path.join('build', 'static')] 
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
