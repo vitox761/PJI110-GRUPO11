@@ -26,8 +26,8 @@ SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['grupo11pi.azurewebsites.net']
-CSRF_TRUESTED_ORIGINS = "https://grupo11pi.azurewebsites.net"
+ALLOWED_HOSTS = ['grupo11pintegrador.azurewebsites.net']
+CSRF_TRUESTED_ORIGINS = "https://grupo11pintegrador.azurewebsites.net"
 SECURE_SSL_REDIRECT = 0
 # Application definition
 
@@ -83,10 +83,10 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "grupo11pi-database",
-        "USER": "cglbpuvkut",
-        "PASSWORD": "$VlqXPvDEdBba98y",
-        "HOST": "grupo11pi-server.mysql.database.azure.com",
+        "NAME": "grupo11pintegrador-database",
+        "USER": "izomjvrtvg",
+        "PASSWORD": "Q7QnXlub$OrOYyX6",
+        "HOST": "grupo11pintegrador-server.mysql.database.azure.com",
         "PORT": "3306",
     }
 }
