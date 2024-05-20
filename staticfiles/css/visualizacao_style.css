@@ -1,0 +1,148 @@
+/* Estilos para o contêiner */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Resetar o CSS */
+* {
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+}
+
+body,
+html {
+    font-size: 100%;
+    background: white;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.cabecalho-menu-item {
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cabecalho-menu-item:hover {
+    color: #578ab4;
+}
+
+.tabela-container {
+    width: 80vw;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    margin: 30px auto;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid #578ab4;
+    border-radius: 10px
+}
+
+/* Estilo do cabeçalho da tabela */
+th {
+    background-color: #f7f7f7;
+    font-weight: 800;
+    font-size: 24px;
+    color: #578ab4;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #578ab4;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.titulo-coluna {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Estilo das células da tabela */
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para células de ação (editar/apagar) */
+td button {
+    width: 90px;
+    height: 30px;
+    background-color: #578ab4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    line-height: 0px;
+    transition: background-color 0.4s ease;
+}
+
+/* Estilo para links dentro dos botões */
+td button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo para hover nos botões */
+td button:hover {
+    background-color: #4c7ca8;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 1366px) {
+
+    .cabecalho-menu {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    table {
+        margin: 15px auto;
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    td button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Quebrar a linha */
+    tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    /* Esconder o cabeçalho */
+    th {
+        display: none;
+    }
+}
