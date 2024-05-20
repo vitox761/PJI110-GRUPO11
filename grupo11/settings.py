@@ -26,8 +26,8 @@ SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pi11castraanimalmarilia.azurewebsites.net']
-CSRF_TRUESTED_ORIGINS = "https://pi11castraanimalmarilia.azurewebsites.net"
+ALLOWED_HOSTS = ['grupo11pi.azurewebsites.net']
+CSRF_TRUESTED_ORIGINS = "https://grupo11pi.azurewebsites.net"
 SECURE_SSL_REDIRECT = 0
 # Application definition
 
