@@ -40,13 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "grupo11",
     "crispy_forms",
-    "crispy_bootstrap5",
-    'whitenoise.runserver_nostatic'
+    "crispy_bootstrap5"
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -56,7 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "grupo11.urls"
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 TEMPLATES = [
     {
