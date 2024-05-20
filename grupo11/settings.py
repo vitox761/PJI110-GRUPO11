@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['grupo11pi.azurewebsites.net']
 CSRF_TRUESTED_ORIGINS = "https://grupo11pi.azurewebsites.net"
@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "grupo11",
     "crispy_forms",
-    "crispy_bootstrap5"
+    "crispy_bootstrap5",
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -54,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "grupo11.urls"
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 TEMPLATES = [
     {
@@ -123,10 +126,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "assets"
+    BASE_DIR / 'grupo11' / 'static',
 ]
 
 # Default primary key field type
