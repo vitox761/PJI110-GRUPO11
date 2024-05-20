@@ -40,13 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "grupo11",
     "crispy_forms",
-    "crispy_bootstrap5",
-    'whitenoise.runserver_nostatic'
+    "crispy_bootstrap5"
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -56,7 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "grupo11.urls"
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 TEMPLATES = [
     {
@@ -126,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / 'grupo11' / 'static',
