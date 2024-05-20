@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!
 DEBUG = False
 
 ALLOWED_HOSTS = ['grupo11pintegrador.azurewebsites.net']
-CSRF_TRUESTED_ORIGINS = "https://grupo11pintegrador.azurewebsites.net"
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 # Application definition
 
 INSTALLED_APPS = [
