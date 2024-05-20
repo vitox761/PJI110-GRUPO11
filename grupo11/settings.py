@@ -82,10 +82,10 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "prijetopigrupo11-database",
-        "USER": "xsczuqfuky",
-        "PASSWORD": "123Mudar",
-        "HOST": "prijetopigrupo11-server.mysql.database.azure.com",
+        "NAME": "grupo11pi-database",
+        "USER": "cglbpuvkut",
+        "PASSWORD": "$VlqXPvDEdBba98y",
+        "HOST": "grupo11pi-server.mysql.database.azure.com",
         "PORT": "3306",
     }
 }
