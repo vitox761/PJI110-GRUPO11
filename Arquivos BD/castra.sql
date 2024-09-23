@@ -103,6 +103,28 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Atendimento` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `mydb`.`Clinica`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Clinica` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
+  `idUsuario` int NOT NULL,
+  `Usuario_Nome` varchar(45) NOT NULL,
+  `Usuario_Registro` varchar(45) NOT NULL,
+  `Usuario_CPF` varchar(45) NOT NULL,
+  `Usuario_Senha` decimal(8,0) NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY `Usuario_Nome_UNIQUE` (`Usuario_Nome`),
+  UNIQUE KEY `idUsuario_UNIQUE` (`idUsuario`),
+  UNIQUE KEY `Usuario_Registro_UNIQUE` (`Usuario_Registro`),
+  UNIQUE KEY `Usuario_CPF_UNIQUE` (`Usuario_CPF`),
+  UNIQUE KEY `Usuario_Senha_UNIQUE` (`Usuario_Senha`)
+  )
+ENGINE = InnoDB;
+
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
