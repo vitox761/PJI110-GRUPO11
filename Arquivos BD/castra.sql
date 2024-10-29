@@ -123,6 +123,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   )
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
+    `idUsuario` INT NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(50) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `is_admin` TINYINT(1) NOT NULL DEFAULT 0,
+    PRIMARY KEY (`idUsuario`)
+) ENGINE = InnoDB;
+
+INSERT INTO `mydb`.`Usuarios` (username, password, is_admin) 
+VALUES ('admin', MD5('senha123'), 1);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
