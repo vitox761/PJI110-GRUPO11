@@ -17,8 +17,17 @@
     <header class="cabecalho">
         <nav class="cabecalho-menu">
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
-            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
             <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+                {{ user }}
+                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link">Sair</button>
+                  </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
+            {% endif %}
         </nav>
     </header>
 

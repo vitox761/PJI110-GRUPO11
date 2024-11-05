@@ -57,7 +57,7 @@ ROOT_URLCONF = "grupo11.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -69,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+LOGIN_REDIRECT_URL = '/admin'
+LOGOUT_REDIRECT_URL = '/'
 
 STORAGES = {
     "staticfiles": {
@@ -87,7 +89,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "mydb",
         "USER": "root",
-        "PASSWORD": "182023Aa@?",
+        "PASSWORD": "",
         "HOST": "localhost",
         "PORT": "3306",
     }

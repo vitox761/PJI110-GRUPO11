@@ -17,43 +17,63 @@
     <header class="cabecalho">
         <nav class="cabecalho-menu">
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
-            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
             <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+                {{ user }}
+                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link">Sair</button>
+                  </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
+            {% endif %}
         </nav>
     </header>
 
-    <main class="conteudo">
-        <div class="form">
-            <div class="input-container">
-                <div class="header">
-                    <h1 class="titulo">Gestão de atendimentos</h1>
-                    <p class="subtitulo">Configurações e acessos de atendimentos, animais, clínicas e tutores.</p>
-                    <div class="input-group">
-                        <div class="input-box">
-                            <h3>Atendimentos</h3>
-                            <button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button>
-                            <button><a href="{% url 'visualizar_atendimento' %}">Acessar lista de
-                                    atendimentos</a></button>
-                        </div>
-                        <div class="input-box">
-                            <h3>Animais</h3>
-                            <button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button>
-                            <button><a href="{% url 'visualizar_animal' %}">Acessar lista de animais</a></button>
-                        </div>
-                        <div class="input-box">
-                            <h3>Clínicas</h3>
-                            <button><a href="{% url 'criar_clinica' %}">Criar nova clínica</a></button>
-                            <button><a href="{% url 'visualizar_clinica' %}">Acessar lista de clínicas</a></button>
-                        </div>
-                        <div class="input-box">
-                            <h3>Tutores</h3>
-                            <button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button>
-                            <button><a href="{% url 'visualizar_tutor' %}">Acessar lista de tutores</a></button>
+    {% if user.is_authenticated %}
+        <main class="conteudo">
+            <div class="form">
+                <div class="input-container">
+                    <div class="header">
+                        <h1 class="titulo">Gestão de atendimentos</h1>
+                        <p class="subtitulo">Configurações e acessos de atendimentos, animais, clínicas e tutores.</p>
+                        <div class="input-group">
+                            <div class="input-box">
+                                <h3>Atendimentos</h3>
+                                <button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button>
+                                <button><a href="{% url 'visualizar_atendimento' %}">Acessar lista de
+                                        atendimentos</a></button>
+                            </div>
+                            <div class="input-box">
+                                <h3>Animais</h3>
+                                <button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button>
+                                <button><a href="{% url 'visualizar_animal' %}">Acessar lista de animais</a></button>
+                            </div>
+                            <div class="input-box">
+                                <h3>Clínicas</h3>
+                                <button><a href="{% url 'criar_clinica' %}">Criar nova clínica</a></button>
+                                <button><a href="{% url 'visualizar_clinica' %}">Acessar lista de clínicas</a></button>
+                            </div>
+                            <div class="input-box">
+                                <h3>Tutores</h3>
+                                <button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button>
+                                <button><a href="{% url 'visualizar_tutor' %}">Acessar lista de tutores</a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
+        </main>
+    {% else %}
+        <main class="conteudo">
+            <div class="input-container">
+                <p> Usuario sem permissao para visualizar a pagina, por favor</p>
+                <div class="input-group">
+                    <a href="{% url 'login' %}" class="btn btn-link">Fazer Login</a>
+                </div>
             </div>
-    </main>
+        </main>
+    {% endif %}
 
 </body>
 

@@ -71,5 +71,12 @@ class AtendimentoModel(models.Model):
     Animal_Tutor_idTutor = models.ForeignKey(TutorModel, on_delete=models.CASCADE)
     Clinica_idClinica = models.ForeignKey(ClinicaModel, on_delete=models.CASCADE)
 
+# declarar modelo "UsuariosModel"
+class UsuariosModel(models.Model):
+ 
+    # campos do modelo
+    username = models.CharField(max_length = 200)
+    password = models.CharField(max_length = 200)
+    is_admin = models.BooleanField()
 
 
