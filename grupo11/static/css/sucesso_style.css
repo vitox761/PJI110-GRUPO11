@@ -31,13 +31,13 @@ body {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
 }
 
 .mensagem {
@@ -50,12 +50,12 @@ body {
 
 .mensagem h1 {
     font-size: 32px;
-    color: #578ab4;
+    color: #4D77A8;
     margin-bottom: 20px;
 }
 
 .botao-voltar {
-    background-color: #578ab4;
+    background-color: #4875A3;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -66,12 +66,13 @@ body {
 }
 
 .botao-voltar:hover {
-    background-color: #417392;
+    background-color: #3E668E;
 }
 
 .botao-voltar-link {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .imagem-sucesso {

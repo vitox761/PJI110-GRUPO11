@@ -31,18 +31,18 @@ body {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
 }
 
 .conteudo {
     margin-bottom: 48px;
-    border-top: 0.4px solid #578ab4;
+    border-top: 0.4px solid #4a7a94;
 }
 
 .conteudo-principal {
@@ -61,20 +61,21 @@ body {
 .conteudo-principal-escrito-titulo {
     font-weight: 700;
     font-size: 64px;
-    color: #578ab4;
+    color: #4D77A8;
 }
 
 .conteudo-principal-escrito-subtitulo {
     font-weight: 400;
     font-size: 24px;
+    color: #212121;
 }
 
 .conteudo-principal-escrito-botao {
-    background-color: #578ab4;
+    background-color: #4875A3;
     width: 200px;
     height: 50px;
     border: none;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.123);
     border-radius: 30px;
     font-weight: 600;
     font-size: 18px;
@@ -85,7 +86,7 @@ body {
 }
 
 .conteudo-principal-escrito-botao:hover {
-    background-color: #4c7ca8;
+    background-color: #3E668E;
 }
 
 .conteudo-principal-escrito-botao-link {
@@ -111,17 +112,18 @@ body {
 }
 
 .conteudo-secundario-titulo {
-    border-top: 0.4px solid #578ab4;
+    border-top: 0.4px solid #4D77A8;
     padding-top: 35px;
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 10px;
-    color: #578ab4;
+    color: #4D77A8;
 }
 
 .conteudo-secundario-paragrafo {
     font-weight: 400;
     font-size: 17px;
+    color: #212121;
 }
 
 @media only screen and (max-width: 1300px) {

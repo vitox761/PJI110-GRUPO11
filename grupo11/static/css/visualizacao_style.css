@@ -30,16 +30,32 @@ html {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
+}
+
+.conteudo-principal {
+    margin-bottom: 48px;
+    border-top: 0.4px solid #4a7a94;
+    display: flex;
+    flex-direction: row;
+    margin-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    min-height: 90vh;
+    color: #212121;
 }
 
 .tabela-container {
+    margin-bottom: 48px;
+    border-top: 0.4px solid #4a7a94;
     width: 80vw;
     margin: 0 auto;
     max-width: 1200px;
@@ -53,26 +69,26 @@ table {
     margin: 30px auto;
     max-width: 100%;
     overflow-x: auto;
-    border: 1px solid #578ab4;
+    border: 1px solid #4a7a94;
     border-radius: 10px
 }
 
 /* Estilo do cabeçalho da tabela */
 th {
-    background-color: #f7f7f7;
+    background-color: #FCFCFC;
     font-weight: 800;
     font-size: 24px;
-    color: #578ab4;
+    color: #4D77A8;
     text-align: center;
     padding: 20px;
-    border-bottom: 2px solid #578ab4;
+    border-bottom: 1px solid #4875A3;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .titulo-coluna {
     font-weight: bold;
-    color: #333333;
+    color: #212121;
 }
 
 /* Estilo das células da tabela */
@@ -80,13 +96,15 @@ td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    /* Linhas */
+    color: #212121
 }
 
 /* Estilo para células de ação (editar/apagar) */
 td button {
     width: 90px;
     height: 30px;
-    background-color: #578ab4;
+    background-color: #4875A3;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -107,7 +125,7 @@ td button a {
 
 /* Estilo para hover nos botões */
 td button:hover {
-    background-color: #4c7ca8;
+    background-color: #3E668E;
 }
 
 /* Responsividade */

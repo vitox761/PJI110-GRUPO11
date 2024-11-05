@@ -33,18 +33,19 @@ body {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
 }
 
 .conteudo {
     margin-bottom: 48px;
-    border-top: 0.4px solid #578ab4;
+    border-top: 0.4px solid #4D77A8;
+    color: #212121;
 }
 
 /* Estilos para a div.header */
@@ -59,7 +60,8 @@ body {
 /* Estilos para o título */
 .titulo {
     font-size: 45px;
-    color: #4682B4;
+    font-weight: bold;
+    color: #4D77A8;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -67,6 +69,7 @@ body {
 /* Estilos para o subtítulo */
 .subtitulo {
     text-align: center;
+    font-size: 18px;
 }
 
 .input-container {
@@ -105,19 +108,11 @@ body {
     /* Centraliza o texto horizontalmente */
 }
 
-.input-box input:hover {
-    background-color: #eeeeee75;
-}
-
-.input-box input:focus-visible {
-    outline: 1px solid #4682B4;
-}
-
 /* Estilizando os botões */
 button {
     border: none;
-    background-color: #578ab4;
-    color: #ffffff;
+    background-color: #4875A3;
+    color: #ffff;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -131,7 +126,7 @@ button {
 }
 
 button:hover {
-    background-color: #4c7ca8;
+    background-color: #3E668E;
 }
 
 /* Estilo para os links dentro dos botões */

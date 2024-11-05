@@ -30,18 +30,18 @@ html {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
 }
 
 .conteudo-principal {
     margin-bottom: 48px;
-    border-top: 0.4px solid #578ab4;
+    border-top: 0.3px solid #4a7a94;
     display: flex;
     flex-direction: row;
     margin-top: none;
@@ -50,6 +50,8 @@ html {
     justify-content: center;
     justify-content: space-around;
     min-height: 90vh;
+    color: #212121;
+    font-weight: bold;
 }
 
 .conteudo-principal-escrito {
@@ -58,28 +60,18 @@ html {
     gap: 32px;
 }
 
-.conteudo-principal-escrito-titulo {
-    font-weight: 700;
-    font-size: 64px;
-    color: #578ab4;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .formulario {
     width: 100%;
     background-color: white;
     padding: 40px;
     border: none;
-    /* border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     max-width: 700px;
     margin: 0 auto;
 }
 
 .formulario fieldset {
     border-radius: 15px;
-    border-color: #88B0D1;
+    border-color: #4875A3;
     border-width: 1px;
     padding: 20px;
     margin: 0 auto;
@@ -93,12 +85,11 @@ html {
 
 .campos-formulario {
     border-radius: 15px;
-    border-color: #88B0D1;
     border-width: 1px;
 }
 
 .submit-button {
-    background-color: #578ab4;
+    background-color: #4875A3;
     color: white;
     border: none;
     padding: 5px;
@@ -113,7 +104,7 @@ html {
 }
 
 .submit-button:hover {
-    background-color: #4c7ca8;
+    background-color: #3E668E;
 }
 
 /* Resposividade */
