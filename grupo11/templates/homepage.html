@@ -18,14 +18,14 @@
             <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
             <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-                {{ user }}
-                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-link">Sair</button>
-                  </form>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
+            {{ user }}
+            <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link">Sair</button>
+            </form>
             {% else %}
-                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
+            <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
             {% endif %}
         </nav>
     </header>
@@ -48,21 +48,30 @@
         </section>
 
         <section class="conteudo-secundario">
-            <h3 class="conteudo-secundario-titulo">Por que castrar o seu pet?</h3>
-            <p class="conteudo-secundario-paragrafo">1. <strong>Controle da população:</strong> A castração ajuda a
-                evitar a superpopulação de animais,
-                reduzindo o número de
-                animais
-                abandonados e sofrendo nas ruas.</p>
-            <p class="conteudo-secundario-paragrafo">2. <strong>Saúde e bem-estar:</strong> Reduz o risco de doenças
+            <h3 class="conteudo-secundario-titulo">Saiba mais</h3>
+            <p class="conteudo-secundario-paragrafo"><strong>O que é castração?</strong> A cirurgia, realizada com
+                anestesia geral, envolve a remoção do útero, trompas e ovários nas fêmeas, e dos testículos nos machos.
+                É simples, mas deve ser feita apenas por veterinários.</p>
+            <p class="conteudo-secundario-paragrafo"><strong>Por que castrar? </strong> Reduz o risco de doenças
                 graves, como câncer de mama e problemas
                 uterinos, além de
-                comportamentos indesejados relacionados ao cio.</p>
-            <p class="conteudo-secundario-paragrafo">3. <strong>Comportamento tranquilo:</strong> Diminui comportamentos
-                agressivos e marcação de território,
-                tornando o pet
-                mais
-                calmo e sociável.</p>
+                comportamentos indesejados relacionados ao cio e marcação de território.</p>
+            <p class="conteudo-secundario-paragrafo"><strong>Como é o programa?</strong> O serviço é realizado através
+                de uma parceria da Secretaria Municipal da Saúde com clínicas conveniadas.
+                Temos 10 clínicas parceiras para escolha.
+            <p class="conteudo-secundario-paragrafo"><strong>Valores</strong>
+                <br>
+                O custo da castração é de <strong>R$100</strong> para cães e <strong>R$80</strong> para gatos,
+                independente do sexo.
+                <br>
+                Caso sejam necessárias outras medicações, por indicação do medico veterinário da clínica, estas deverão
+                ser autorizadas e custeada pelo munícipe.
+                <br>
+                O município envia o kit de materiais para a clínica.
+                <br>
+                O valor do procedimento é pago pelo munícipe diretamente às clínicas parceiras no dia do procedimento.
+            </p>
+            </p>
         </section>
     </main>
 

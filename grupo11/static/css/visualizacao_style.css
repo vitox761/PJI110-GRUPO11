@@ -23,6 +23,7 @@ html {
 
 .cabecalho-menu {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
@@ -39,24 +40,34 @@ html {
     color: #4a7a94;
 }
 
-.conteudo-principal {
-    margin-bottom: 48px;
-    border-top: 0.4px solid #4a7a94;
-    display: flex;
-    flex-direction: row;
-    margin-top: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    min-height: 90vh;
-    color: #212121;
+#logout-form {
+    display: inline-block;
+}
+
+#logout-form button {
+    border: none;
+    background-color: #4875A3;
+    color: #ffff;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    width: 80px;
+    line-height: 20px;
+}
+
+#logout-form button:hover {
+    background-color: #3E668E;
 }
 
 .tabela-container {
-    margin-bottom: 48px;
-    border-top: 0.4px solid #4a7a94;
-    width: 80vw;
+    margin-bottom: 40px;
+    border-top: 0.5px solid #4D77A8;
+    color: #212121;
+    width: 100vw;
     margin: 0 auto;
     max-width: 1200px;
     padding: 15px;

@@ -24,6 +24,7 @@ body {
 
 .cabecalho-menu {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
@@ -38,6 +39,29 @@ body {
 
 .cabecalho-menu-item:hover {
     color: #4a7a94;
+}
+
+#logout-form {
+    display: inline-block;
+}
+
+#logout-form button {
+    border: none;
+    background-color: #4875A3;
+    color: #ffff;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    width: 80px;
+    line-height: 20px;
+}
+
+#logout-form button:hover {
+    background-color: #3E668E;
 }
 
 .mensagem {
