@@ -24,8 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+ALLOWED_HOSTS = ['castramariliapi2024-hza4haa4gkfab7f8.brazilsouth-01.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,10 +89,10 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "mydb",
-        "USER": "root",
-        "PASSWORD": "",
-        "HOST": "localhost",
+        "NAME": "castramariliapi2024-database",
+        "USER": "xgwstncuyg",
+        "PASSWORD": "q8Qug70un$ILl2RJ",
+        "HOST": "castramariliapi2024-hza4haa4gkfab7f8.brazilsouth-01.azurewebsites.net",
         "PORT": "3306",
     }
 }
