@@ -51,25 +51,58 @@
 
         <section class="conteudo-secundario">
             <h3 class="conteudo-secundario-titulo">Saiba mais</h3>
-            <p class="conteudo-secundario-paragrafo"><strong>O que é castração?</strong> A cirurgia, realizada com
-                anestesia geral, envolve a remoção do útero, trompas e ovários nas fêmeas, e dos testículos nos machos.
-                É simples, mas deve ser feita apenas por veterinários.</p>
-            <p class="conteudo-secundario-paragrafo"><strong>Por que castrar?</strong> Reduz o risco de doenças
-                graves, como câncer de mama e problemas uterinos, além de comportamentos indesejados relacionados ao cio
-                e marcação de território.</p>
-            <p class="conteudo-secundario-paragrafo"><strong>Como é o programa?</strong> O serviço é realizado através
-                de uma parceria da Secretaria Municipal da Saúde com clínicas conveniadas. Temos 10 clínicas parceiras
-                para escolha.</p>
-            <p class="conteudo-secundario-paragrafo"><strong>Valores</strong><br>
-                O custo da castração é de <strong>R$100</strong> para cães e <strong>R$80</strong> para gatos,
-                independente do sexo.<br>
-                Caso sejam necessárias outras medicações, por indicação do médico veterinário da clínica, estas deverão
-                ser autorizadas e custeadas pelo munícipe.<br>
-                O município envia o kit de materiais para a clínica.<br>
-                O valor do procedimento é pago pelo munícipe diretamente às clínicas parceiras no dia do procedimento.
-            </p>
+
+            <div class="acordeao-item">
+                <button class="acordeao-titulo"><strong>O que é castração?</strong></button>
+                <div class="acordeao-conteudo">
+                    <p>A cirurgia, realizada com anestesia geral, envolve a remoção do útero, trompas e ovários nas
+                        fêmeas, e dos testículos nos machos. É simples, mas deve ser feita apenas por veterinários.</p>
+                </div>
+            </div>
+
+            <div class="acordeao-item">
+                <button class="acordeao-titulo"><strong>Por que castrar?</strong></button>
+                <div class="acordeao-conteudo">
+                    <p>Reduz o risco de doenças graves, como câncer de mama e problemas uterinos, além de comportamentos
+                        indesejados relacionados ao cio e marcação de território.</p>
+                </div>
+            </div>
+
+            <div class="acordeao-item">
+                <button class="acordeao-titulo"><strong>Como é o programa?</strong></button>
+                <div class="acordeao-conteudo">
+                    <p>O serviço é realizado através de uma parceria da Secretaria Municipal da Saúde com clínicas
+                        conveniadas. Temos 10 clínicas parceiras para escolha.</p>
+                </div>
+            </div>
+
+            <div class="acordeao-item">
+                <button class="acordeao-titulo"><strong>Valores</strong></button>
+                <div class="acordeao-conteudo">
+                    <p>
+                        O custo da castração é de <strong>R$100</strong> para cães e <strong>R$80</strong> para gatos,
+                        independente do sexo.<br>
+                        Caso sejam necessárias outras medicações, por indicação do médico veterinário da clínica, estas
+                        deverão ser autorizadas e custeadas pelo munícipe.<br>
+                        O município envia o kit de materiais para a clínica.<br>
+                        O valor do procedimento é pago pelo munícipe diretamente às clínicas parceiras no dia do
+                        procedimento.
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script>
+        document.querySelectorAll('.acordeao-titulo').forEach(titulo => {
+            titulo.addEventListener('click', () => {
+                titulo.classList.toggle('aberto');
+                const conteudo = titulo.nextElementSibling;
+                conteudo.classList.toggle('aberto');
+            });
+        });
+    </script>
+
     <footer class="rodape">
         <p class="rodape-texto">© 2025 Projeto Integrador UNIVESP | Sistema de cadastro e gerenciamento de castrações
         </p>

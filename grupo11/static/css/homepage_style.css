@@ -168,6 +168,56 @@ body {
     margin-bottom: 10px;
 }
 
+.acordeao-item {
+    border-bottom: 1px solid #4D77A8;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 10px;
+}
+
+.acordeao-titulo {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4D77A8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acordeao-titulo:hover {
+    background-color: #f0f8ff;
+}
+
+.acordeao-titulo::after {
+    content: "+";
+    font-size: 24px;
+    color: #4D77A8;
+    transition: transform 0.3s ease;
+}
+
+.acordeao-titulo.aberto::after {
+    content: "−";
+}
+
+.acordeao-conteudo {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 15px;
+}
+
+.acordeao-conteudo.aberto {
+    max-height: 500px;
+    padding: 15px;
+}
+
 .rodape {
     background-color: #4D77A8;
     color: white;
