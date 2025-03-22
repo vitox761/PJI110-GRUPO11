@@ -1,6 +1,7 @@
 # Gestão de Castração de Animais  
 
-Projeto acadêmico desenvolvido para a **UNIVESP - Universidade Virtual do Estado de São Paulo**, com foco na automação do processo de castração de animais no município de Marília-SP.  
+Projeto acadêmico desenvolvido para a **UNIVESP - Universidade Virtual do Estado de São Paulo**, com foco na automação do processo de castração de animais no município de Marília-SP. 
+Você pode ler o artigo sobre o projeto [aqui](./docs/Projeto_Integrador_Gestao_Castracao.pdf).
 
 ## 📌 Principais contribuidores  
 - **Victor Otavio Nogueira Sales** – Backend e infraestrutura  
