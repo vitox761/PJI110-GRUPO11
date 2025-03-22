@@ -2,7 +2,7 @@
 
 Projeto acadêmico desenvolvido para a **UNIVESP - Universidade Virtual do Estado de São Paulo**, com foco na automação do processo de castração de animais no município de Marília-SP.  
 
-## 📌 Equipe  
+## 📌 Principais contribuidores  
 - **Victor Otavio Nogueira Sales** – Backend e infraestrutura  
 - **José Cristino da Silva Junior** – Banco de dados  
 - **Angela Luisa da Silva Lopes** – Frontend, testes e versionamento  
