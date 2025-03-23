@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -16,20 +17,21 @@
 </head>
 
 <body>
-
     <header class="cabecalho">
         <nav class="cabecalho-menu">
-            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
-            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item" aria-label="Página Inicial">Página Inicial</a>
+            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item"
+                aria-label="Solicitar Castração">Solicitar castração</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-                {{ user }}
-                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-link">Sair</button>
-                  </form>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item" aria-label="Acesso administrativo">Acesso
+                administrativo</a>
+            {{ user }}
+            <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link" aria-label="Sair" role="button">Sair</button>
+            </form>
             {% else %}
-                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
+            <a href="{% url 'login' %}" class="cabecalho-menu-item" aria-label="Fazer login">Fazer Login</a>
             {% endif %}
         </nav>
     </header>
@@ -49,8 +51,16 @@
                 </fieldset>
             </form>
         </div>
-        </div>
     </main>
+
+    <footer class="rodape">
+        <p class="rodape-texto">© 2025 Projeto Integrador UNIVESP | Sistema de cadastro e gerenciamento de castrações
+        </p>
+        <a href="https://github.com/vitox761/PJI110-GRUPO11" class="rodape-link" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
