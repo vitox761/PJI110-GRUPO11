@@ -7,74 +7,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/admin_style.css' %}">
     <title>Gestão de atendimentos e animais</title>
 </head>
 
 <body>
-
     <header class="cabecalho">
         <nav class="cabecalho-menu">
-            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
-            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
+            <a href="{% url 'home_page' %}" class="cabecalho-menu-item" aria-label="Página Inicial">Página Inicial</a>
+            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item"
+                aria-label="Solicitar Castração">Solicitar castração</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-                {{ user }}
-                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-link">Sair</button>
-                  </form>
+            <a href="{% url 'admin' %}" class="cabecalho-menu-item" aria-label="Acesso administrativo">Acesso
+                administrativo</a>
+            {{ user }}
+            <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link" aria-label="Sair" role="button">Sair</button>
+            </form>
             {% else %}
-                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
+            <a href="{% url 'login' %}" class="cabecalho-menu-item" aria-label="Fazer login">Fazer Login</a>
             {% endif %}
         </nav>
     </header>
 
     {% if user.is_authenticated %}
-        <main class="conteudo">
-            <div class="form">
-                <div class="input-container">
-                    <div class="header">
-                        <h1 class="titulo">Gestão de atendimentos</h1>
-                        <p class="subtitulo">Configurações e acessos de atendimentos, animais, clínicas e tutores.</p>
-                        <div class="input-group">
-                            <div class="input-box">
-                                <h3>Atendimentos</h3>
-                                <button><a href="{% url 'criar_atendimento' %}">Criar novo atendimento</a></button>
-                                <button><a href="{% url 'visualizar_atendimento' %}">Acessar lista de
-                                        atendimentos</a></button>
-                            </div>
-                            <div class="input-box">
-                                <h3>Animais</h3>
-                                <button><a href="{% url 'criar_animal' %}">Criar novo animal</a></button>
-                                <button><a href="{% url 'visualizar_animal' %}">Acessar lista de animais</a></button>
-                            </div>
-                            <div class="input-box">
-                                <h3>Clínicas</h3>
-                                <button><a href="{% url 'criar_clinica' %}">Criar nova clínica</a></button>
-                                <button><a href="{% url 'visualizar_clinica' %}">Acessar lista de clínicas</a></button>
-                            </div>
-                            <div class="input-box">
-                                <h3>Tutores</h3>
-                                <button><a href="{% url 'criar_tutor' %}">Criar novo tutor</a></button>
-                                <button><a href="{% url 'visualizar_tutor' %}">Acessar lista de tutores</a></button>
-                            </div>
-                        </div>
-                    </div>
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <h1 class="conteudo-administrativo-titulo">Gestão de Atendimentos</h1>
+            <p class="conteudo-administrativo-subtitulo">Configurações e acessos de atendimentos, animais, clínicas e
+                tutores.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <h3 class="card-titulo">Atendimentos</h3>
+                    <a href="{% url 'criar_atendimento' %}" class="card-botao">Criar novo atendimento</a>
+                    <a href="{% url 'visualizar_atendimento' %}" class="card-botao">Acessar lista de atendimentos</a>
                 </div>
-        </main>
-    {% else %}
-        <main class="conteudo">
-            <div class="input-container">
-                <p> Usuario sem permissao para visualizar a pagina, por favor</p>
-                <div class="input-group">
-                    <a href="{% url 'login' %}" class="btn btn-link">Fazer Login</a>
+
+                <div class="card">
+                    <h3 class="card-titulo">Animais</h3>
+                    <a href="{% url 'criar_animal' %}" class="card-botao">Criar novo animal</a>
+                    <a href="{% url 'visualizar_animal' %}" class="card-botao">Acessar lista de animais</a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-titulo">Clínicas</h3>
+                    <a href="{% url 'criar_clinica' %}" class="card-botao">Criar nova clínica</a>
+                    <a href="{% url 'visualizar_clinica' %}" class="card-botao">Acessar lista de clínicas</a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-titulo">Tutores</h3>
+                    <a href="{% url 'criar_tutor' %}" class="card-botao">Criar novo tutor</a>
+                    <a href="{% url 'visualizar_tutor' %}" class="card-botao">Acessar lista de tutores</a>
                 </div>
             </div>
-        </main>
+        </section>
+    </main>
+    {% else %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <p class="mensagem-erro">Usuário sem permissão para visualizar a página. Por favor, <a
+                    href="{% url 'login' %}" class="link-login">faça login</a>.</p>
+        </section>
+    </main>
     {% endif %}
 
+    <footer class="rodape">
+        <p class="rodape-texto">© 2025 Projeto Integrador UNIVESP | Sistema de cadastro e gerenciamento de castrações
+        </p>
+        <a href="https://github.com/vitox761/PJI110-GRUPO11" class="rodape-link" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </footer>
 </body>
 
 </html>
