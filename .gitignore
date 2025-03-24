@@ -32,6 +32,3 @@ venv.bak/
 
 # Arquivos BD
 Arquivos BD/
-
-# Static files
-staticfiles/
