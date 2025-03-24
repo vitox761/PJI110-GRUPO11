@@ -109,6 +109,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Clinica` ;
 
 
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
     `idUsuario` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(50) NOT NULL UNIQUE,
