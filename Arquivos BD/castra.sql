@@ -108,25 +108,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`Clinica` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
-  `idUsuario` int NOT NULL,
-  `Usuario_Nome` varchar(45) NOT NULL,
-  `Usuario_Registro` varchar(45) NOT NULL,
-  `Usuario_CPF` varchar(45) NOT NULL,
-  `Usuario_Senha` decimal(8,0) NOT NULL,
-  PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY `Usuario_Nome_UNIQUE` (`Usuario_Nome`),
-  UNIQUE KEY `idUsuario_UNIQUE` (`idUsuario`),
-  UNIQUE KEY `Usuario_Registro_UNIQUE` (`Usuario_Registro`),
-  UNIQUE KEY `Usuario_CPF_UNIQUE` (`Usuario_CPF`),
-  UNIQUE KEY `Usuario_Senha_UNIQUE` (`Usuario_Senha`)
-  )
-ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
     `idUsuario` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(50) NOT NULL UNIQUE,
-    `password` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(10) NOT NULL,
     `is_admin` TINYINT(1) NOT NULL DEFAULT 0,
     PRIMARY KEY (`idUsuario`)
 ) ENGINE = InnoDB;
