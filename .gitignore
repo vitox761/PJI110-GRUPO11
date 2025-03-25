@@ -29,6 +29,3 @@ venv.bak/
 # MySQL Workbench
 *.mwb
 *.mwb.bak
-
-# Arquivos BD
-Arquivos BD/
