@@ -1,16 +1,29 @@
 <header class="cabecalho">
     <nav class="cabecalho-menu">
-        <a href="{% url 'home_page' %}" class="cabecalho-menu-item" aria-label="Página Inicial">Página Inicial</a>
-        <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item" aria-label="Solicitar Castração">Solicitar
-            castração</a>
+        <a href="{% url 'home_page' %}"
+            class="cabecalho-menu-item {% if request.resolver_match.url_name == 'homepage' %}active{% endif %}"
+            aria-label="Página Inicial">
+            Página Inicial
+        </a>
+        <a href="{% url 'atendimento_passo1' %}"
+            class="cabecalho-menu-item {% if request.resolver_match.url_name == 'atendimento_passo1' %}active{% endif %}"
+            aria-label="Solicitar Castração">
+            Solicitar castração
+        </a>
+
         {% if user.is_authenticated %}
-        <a href="{% url 'admin' %}" class="cabecalho-menu-item" aria-label="Acesso administrativo">Acesso
-            administrativo</a>
+        <a href="{% url 'admin' %}"
+            class="cabecalho-menu-item {% if request.resolver_match.url_name == 'admin' %}active{% endif %}"
+            aria-label="Acesso administrativo">
+            Acesso administrativo
+        </a>
         {{ user }}
+
         <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
             {% csrf_token %}
             <button type="submit" class="btn btn-link" aria-label="Sair" role="button">Sair</button>
         </form>
+
         {% else %}
         <a href="{% url 'login' %}" class="cabecalho-menu-item" aria-label="Fazer login">Fazer Login</a>
         {% endif %}
