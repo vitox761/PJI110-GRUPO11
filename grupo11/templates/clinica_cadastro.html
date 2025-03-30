@@ -4,11 +4,7 @@
 <html lang="pt-BR" class="h-100">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Castração de baixo-custo em parceria com a Prefeitura de Marília - SP">
-    <link rel="icon" href="{% static 'images/pet-icon.ico' %}" type="image/x-icon">
+    {% include 'partials/head.html' %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -17,31 +13,14 @@
 
 <body>
 
-    <header class="cabecalho">
-        <nav class="cabecalho-menu">
-            <a href="{% url 'home_page' %}" class="cabecalho-menu-item">Página Inicial</a>
-            <a href="{% url 'atendimento_passo1' %}" class="cabecalho-menu-item">Solicitar castração</a>
-            {% if user.is_authenticated %}
-                <a href="{% url 'admin' %}" class="cabecalho-menu-item">Acesso administrativo</a>
-                {{ user }}
-                <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-link">Sair</button>
-                  </form>
-            {% else %}
-                <a href="{% url 'login' %}" class="cabecalho-menu-item">Fazer Login</a>
-            {% endif %}
-        </nav>
-    </header>
+    {% include 'partials/header.html' %}
 
     <main class="conteudo">
         <div class="conteudo-principal">
             <form method="POST" enctype="multipart/form-data" class="formulario">
                 <fieldset>
                     <legend>Insira os dados da clínica</legend>
-                    <!-- Security token -->
                     {% csrf_token %}
-                    <!-- Using the formset -->
                     <div class="campos-formulario">
                         {{ form|crispy }}
                     </div>
@@ -49,15 +28,12 @@
                 </fieldset>
             </form>
         </div>
-        </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    {% include 'partials/script.html' %}
+
+    {% include 'partials/footer.html' %}
+
 </body>
 
 </html>
