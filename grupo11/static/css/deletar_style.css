@@ -112,6 +112,28 @@ body {
     height: auto;
 }
 
+.rodape {
+    background-color: #4D77A8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 48px;
+}
+
+.rodape-texto {
+    margin: 10px 0;
+}
+
+.rodape-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape-link:hover {
+    color: #c0d8e8;
+}
+
 @media only screen and (max-width: 600px) {
 
     .cabecalho-menu {
