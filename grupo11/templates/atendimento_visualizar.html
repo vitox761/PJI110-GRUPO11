@@ -53,6 +53,23 @@
                             {% endfor %}
                         </tbody>
                     </table>
+
+                    <div class="paginacao">
+                        {% if atendimentos.has_previous %}
+                        <a href="?page=1" class="pagina-link">&laquo; Primeira</a>
+                        <a href="?page={{ atendimentos.previous_page_number }}" class="pagina-link">Anterior</a>
+                        {% endif %}
+
+                        <span class="pagina-atual">
+                            Página {{ atendimentos.number }} de {{ atendimentos.paginator.num_pages }}
+                        </span>
+
+                        {% if atendimentos.has_next %}
+                        <a href="?page={{ atendimentos.next_page_number }}" class="pagina-link">Próxima</a>
+                        <a href="?page={{ atendimentos.paginator.num_pages }}" class="pagina-link">Última &raquo;</a>
+                        {% endif %}
+                    </div>
+
                 </div>
             </div>
         </section>
