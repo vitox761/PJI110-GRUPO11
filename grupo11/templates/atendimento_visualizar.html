@@ -1,44 +1,72 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-100">
+<html lang="pt-BR">
 
+<head>
+    {% include 'partials/head.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
+    <title>Gestão de Atendimentos</title>
+</head>
 
 <body>
-
-    <head>
-        {% include 'partials/head.html' %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
-        <title>Acessar atendimentos</title>
-    </head>
-
     {% include 'partials/header.html' %}
 
-    <div class="tabela-container">
-        <table>
-            <th colspan="9">Atendimentos cadastrados</th>
-            <tr>
-                <td class="titulo-coluna"> Data </td>
-                <td class="titulo-coluna"> Observações </td>
-                <td class="titulo-coluna"> Animal </td>
-                <td class="titulo-coluna"> Tutor </td>
-                <td class="titulo-coluna"> Clinica </td>
-            </tr>
-            {% for atendimento in atendimentos %}
-            <tr>
-                <td>{{ atendimento.Aten_Data }}</td>
-                <td>{{ atendimento.Aten_Obs }}</td>
-                <td>{{ atendimento.Animal_idAnimal }}</td>
-                <td>{{ atendimento.Animal_Tutor_idTutor }}</td>
-                <td>{{ atendimento.Clinica_idClinica }}</td>
-                <td><button><a href="{% url 'editar_atendimento' atendimento.id  %}">Editar</a></button></td>
-                <td><button><a href="{% url 'deletar_atendimento' atendimento.id  %}"> Apagar </a></button></td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+    {% if user.is_authenticated %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <h1 class="conteudo-administrativo-titulo">Gestão de Atendimentos</h1>
+            <p class="conteudo-administrativo-subtitulo">Visualize, edite ou exclua atendimentos cadastrados no sistema
+            </p>
+
+            <div class="tabela-container">
+                <div class="table-header">
+                    <a href="{% url 'criar_atendimento' %}" class="card-botao">Novo atendimento</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Observações</th>
+                                <th>Animal</th>
+                                <th>Tutor</th>
+                                <th>Clínica</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for atendimento in atendimentos %}
+                            <tr>
+                                <td>{{ atendimento.Aten_Data }}</td>
+                                <td>{{ atendimento.Aten_Obs }}</td>
+                                <td>{{ atendimento.Animal_idAnimal }}</td>
+                                <td>{{ atendimento.Animal_Tutor_idTutor }}</td>
+                                <td>{{ atendimento.Clinica_idClinica }}</td>
+                                <td class="acoes">
+                                    <a href="{% url 'editar_atendimento' atendimento.id %}"
+                                        class="acao-btn editar">Editar</a>
+                                    <a href="{% url 'deletar_atendimento' atendimento.id %}"
+                                        class="acao-btn deletar">Apagar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% else %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <p class="mensagem-erro">Usuário sem permissão para visualizar a página. Por favor, <a
+                    href="{% url 'login' %}" class="link-login">faça login</a>.</p>
+        </section>
+    </main>
+    {% endif %}
 
     {% include 'partials/footer.html' %}
-
 </body>
 
 </html>
