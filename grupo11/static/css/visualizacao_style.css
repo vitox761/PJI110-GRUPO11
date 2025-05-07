@@ -1,24 +1,34 @@
-/* Estilos para o contêiner */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 /* Resetar o CSS */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
     font-family: "Outfit", sans-serif;
 }
 
-body,
-html {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-size: 100%;
     background: white;
 }
 
 .cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     padding: 24px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cabecalho-menu {
@@ -28,16 +38,21 @@ html {
 }
 
 .cabecalho-menu-item {
-    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: #212121;
-    text-decoration: none;
+    color: #000;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #4a7a94;
+    color: #3E668E;
+}
+
+.conteudo {
+    flex: 1;
+    margin-bottom: 48px;
+    border-top: 0.5px solid #4a7a94;
+    padding-top: 100px;
 }
 
 #logout-form {
@@ -47,14 +62,12 @@ html {
 #logout-form button {
     border: none;
     background-color: #4875A3;
-    color: #ffff;
+    color: #fff;
     padding: 5px;
     border-radius: 15px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
-    display: inline-block;
     width: 80px;
     line-height: 20px;
 }
@@ -63,80 +76,139 @@ html {
     background-color: #3E668E;
 }
 
-.tabela-container {
-    margin-bottom: 40px;
-    border-top: 0.5px solid #4D77A8;
-    color: #212121;
-    width: 100vw;
-    margin: 0 auto;
+.conteudo-administrativo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
     max-width: 1200px;
-    padding: 15px;
-    overflow-x: auto;
+    margin: 0 auto;
 }
 
-/* Estilos para a tabela */
-table {
-    width: 100%;
-    margin: 30px auto;
-    max-width: 100%;
-    overflow-x: auto;
-    border: 1px solid #4a7a94;
-    border-radius: 10px
-}
-
-/* Estilo do cabeçalho da tabela */
-th {
-    background-color: #FCFCFC;
-    font-weight: 800;
-    font-size: 24px;
+.conteudo-administrativo-titulo {
+    font-size: 45px;
+    font-weight: bold;
     color: #4D77A8;
     text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #4875A3;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.titulo-coluna {
+.conteudo-administrativo-subtitulo {
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tabela-container {
+    width: 100%;
+    margin-top: 20px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Adicione isso ao seu arquivo visualizacao_style.css */
+
+.card-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4875A3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.card-botao:hover {
+    background-color: #3E668E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-botao:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+thead {
+    background-color: #f8f9fa;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
     font-weight: bold;
+    color: #4D77A8;
+    border-bottom: 2px solid #4D77A8;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
     color: #212121;
 }
 
-/* Estilo das células da tabela */
-td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    /* Linhas */
-    color: #212121
+tr:hover {
+    background-color: #f5f8fa;
 }
 
-/* Estilo para células de ação (editar/apagar) */
-td button {
-    width: 90px;
-    height: 30px;
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.acao-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.editar {
     background-color: #4875A3;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 15px;
-    text-align: center;
-    line-height: 0px;
-    transition: background-color 0.4s ease;
 }
 
-/* Estilo para links dentro dos botões */
-td button a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Estilo para hover nos botões */
-td button:hover {
+.editar:hover {
     background-color: #3E668E;
+}
+
+.deletar {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.deletar:hover {
+    background-color: #dc3545;
+    color: white;
 }
 
 .rodape {
@@ -161,40 +233,47 @@ td button:hover {
     color: #c0d8e8;
 }
 
-
-/* Responsividade */
-@media only screen and (max-width: 1366px) {
-
-    .cabecalho-menu {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    table {
-        margin: 15px auto;
-        font-size: 14px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .conteudo-administrativo-titulo {
+        font-size: 36px;
+    }
+
+    .conteudo-administrativo-subtitulo {
+        font-size: 16px;
+    }
+
+    .table-header {
+        justify-content: center;
     }
 
     th,
     td {
-        padding: 10px;
-    }
-
-    td button {
-        padding: 8px 15px;
+        padding: 8px 10px;
         font-size: 14px;
     }
 
-    /* Quebrar a linha */
-    tr {
-        display: block;
-        margin-bottom: 15px;
+    .acao-btn {
+        padding: 6px 8px;
+        font-size: 12px;
     }
+}
 
-    /* Esconder o cabeçalho */
-    th {
-        display: none;
+@media only screen and (max-width: 480px) {
+    .acoes {
+        flex-direction: column;
+        gap: 5px;
     }
 }
