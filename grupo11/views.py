@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 
 from .models import ClinicaModel
@@ -265,3 +266,51 @@ def solicitarAtendimentoPasso3View(request):
         return render(request,'passo3_sucesso.html',context)
     else:
         return render(request, "passo3_cadastro.html", context)
+
+def visualizarClinicaView(request):
+    clinicas_list = ClinicaModel.objects.all().order_by('Clin_Estabelecimento')
+    paginator = Paginator(clinicas_list, 10)  # 10 itens por página
+    
+    page_number = request.GET.get('page')
+    clinicas = paginator.get_page(page_number)
+    
+    return render(request, 'clinica_visualizar.html', {
+        'form_item': ClinicaForm(),
+        'clinicas': clinicas
+    })
+
+def visualizarTutorView(request):
+    tutores_list = TutorModel.objects.all().order_by('id')
+    paginator = Paginator(tutores_list, 10)
+    
+    page_number = request.GET.get('page')
+    tutores = paginator.get_page(page_number)
+    
+    return render(request, 'tutor_visualizar.html', {
+        'form_item': TutorForm(),
+        'tutores': tutores
+    })
+
+def visualizarAnimalView(request):
+    animais_list = AnimalModel.objects.all().order_by('Anim_Nome')
+    paginator = Paginator(animais_list, 10)
+    
+    page_number = request.GET.get('page')
+    animais = paginator.get_page(page_number)
+    
+    return render(request, 'animal_visualizar.html', {
+        'form_item': AnimalForm(),
+        'animais': animais
+    })
+
+def visualizarAtendimentoView(request):
+    atendimentos_list = AtendimentoModel.objects.all().order_by('-Aten_Data')  # '-' para ordem decrescente
+    paginator = Paginator(atendimentos_list, 10)
+    
+    page_number = request.GET.get('page')
+    atendimentos = paginator.get_page(page_number)
+    
+    return render(request, 'atendimento_visualizar.html', {
+        'form_item': AtendimentoForm(),
+        'atendimentos': atendimentos
+    })
