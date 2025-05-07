@@ -1,49 +1,75 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-100">
+<html lang="pt-BR">
+
+<head>
+    {% include 'partials/head.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
+    <title>Gestão de Animais</title>
+</head>
 
 <body>
-
-    <head>
-        {% include 'partials/head.html' %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
-        <title>Animais cadastrados</title>
-    </head>
-
     {% include 'partials/header.html' %}
 
-    <div class="tabela-container">
-        <table>
-            <th colspan="10">Animais cadastrados</th>
-            <tr>
-                <td class="titulo-coluna"> Nome </td>
-                <td class="titulo-coluna"> Especie </td>
-                <td class="titulo-coluna"> Raça </td>
-                <td class="titulo-coluna"> Sexo </td>
-                <td class="titulo-coluna"> Idade </td>
-                <td class="titulo-coluna"> Peso </td>
-                <td class="titulo-coluna"> Caracteristicas </td>
-                <td class="titulo-coluna"> Tutor </td>
-            </tr>
-            {% for animal in animais %}
-            <tr>
-                <td>{{ animal.Anim_Nome }}</td>
-                <td>{{ animal.Anim_Especie }}</td>
-                <td>{{ animal.Anim_Raca }}</td>
-                <td>{{ animal.Anim_Sexo }}</td>
-                <td>{{ animal.Anim_Idade }}</td>
-                <td>{{ animal.Anim_Peso }}</td>
-                <td>{{ animal.Anim_Caracteristicas }}</td>
-                <td>{{ animal.Tutor_idTutor }}</td>
-                <td><button><a href="{% url 'editar_animal' animal.id  %}">Editar</a></button></td>
-                <td><button><a href="{% url 'deletar_animal' animal.id  %}"> Apagar </a></button></td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+    {% if user.is_authenticated %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <h1 class="conteudo-administrativo-titulo">Gestão de Animais</h1>
+            <p class="conteudo-administrativo-subtitulo">Visualize, edite ou exclua animais cadastrados no sistema</p>
+
+            <div class="tabela-container">
+                <div class="table-header">
+                    <a href="{% url 'criar_animal' %}" class="card-botao">Novo animal</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Espécie</th>
+                                <th>Raça</th>
+                                <th>Sexo</th>
+                                <th>Idade</th>
+                                <th>Peso</th>
+                                <th>Características</th>
+                                <th>Tutor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for animal in animais %}
+                            <tr>
+                                <td>{{ animal.Anim_Nome }}</td>
+                                <td>{{ animal.Anim_Especie }}</td>
+                                <td>{{ animal.Anim_Raca }}</td>
+                                <td>{{ animal.Anim_Sexo }}</td>
+                                <td>{{ animal.Anim_Idade }}</td>
+                                <td>{{ animal.Anim_Peso }}</td>
+                                <td>{{ animal.Anim_Caracteristicas }}</td>
+                                <td>{{ animal.Tutor_idTutor }}</td>
+                                <td class="acoes">
+                                    <a href="{% url 'editar_animal' animal.id %}" class="acao-btn editar">Editar</a>
+                                    <a href="{% url 'deletar_animal' animal.id %}" class="acao-btn deletar">Apagar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% else %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <p class="mensagem-erro">Usuário sem permissão para visualizar a página. Por favor, <a
+                    href="{% url 'login' %}" class="link-login">faça login</a>.</p>
+        </section>
+    </main>
+    {% endif %}
 
     {% include 'partials/footer.html' %}
-
 </body>
 
 </html>
