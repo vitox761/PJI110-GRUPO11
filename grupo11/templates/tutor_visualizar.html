@@ -5,43 +5,86 @@
 <head>
     {% include 'partials/head.html' %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/visualizacao_style.css' %}">
-    <title>Tutores cadastrados</title>
+    <title>Gestão de Tutores</title>
 </head>
 
 <body>
-
     {% include 'partials/header.html' %}
 
-    <div class="tabela-container">
-        <table>
-            <th colspan="10">Tutores cadastrados</th>
-            <tr>
-                <td class="titulo-coluna"> Nome </td>
-                <td class="titulo-coluna"> Endereco </td>
-                <td class="titulo-coluna"> Bairro </td>
-                <td class="titulo-coluna"> Telefone </td>
-                <td class="titulo-coluna"> CPF </td>
-                <td class="titulo-coluna"> RG </td>
-                <td class="titulo-coluna"> ONG </td>
-            </tr>
-            {% for tutor in tutores %}
-            <tr>
-                <td>{{ tutor.Tut_Nome }}</td>
-                <td>{{ tutor.Tut_Endereco }}</td>
-                <td>{{ tutor.Tut_Bairro }}</td>
-                <td>{{ tutor.Tut_Fone }}</td>
-                <td>{{ tutor.Tut_CPF }}</td>
-                <td>{{ tutor.Tut_RG }}</td>
-                <td>{{ tutor.get_Tut_Ong_display }}</td>
-                <td><button><a href="{% url 'editar_tutor' tutor.id  %}">Editar</a></button></td>
-                <td><button><a href="{% url 'deletar_tutor' tutor.id  %}">Apagar</a></button></td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+    {% if user.is_authenticated %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <h1 class="conteudo-administrativo-titulo">Gestão de Tutores</h1>
+            <p class="conteudo-administrativo-subtitulo">Visualize, edite ou exclua tutores cadastrados no sistema</p>
+
+            <div class="tabela-container">
+                <div class="table-header">
+                    <a href="{% url 'criar_tutor' %}" class="card-botao">Novo tutor</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Endereço</th>
+                                <th>Bairro</th>
+                                <th>Telefone</th>
+                                <th>CPF</th>
+                                <th>RG</th>
+                                <th>ONG</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tutor in tutores %}
+                            <tr>
+                                <td>{{ tutor.Tut_Nome }}</td>
+                                <td>{{ tutor.Tut_Endereco }}</td>
+                                <td>{{ tutor.Tut_Bairro }}</td>
+                                <td>{{ tutor.Tut_Fone }}</td>
+                                <td>{{ tutor.Tut_CPF }}</td>
+                                <td>{{ tutor.Tut_RG }}</td>
+                                <td>{{ tutor.get_Tut_Ong_display }}</td>
+                                <td class="acoes">
+                                    <a href="{% url 'editar_tutor' tutor.id %}" class="acao-btn editar">Editar</a>
+                                    <a href="{% url 'deletar_tutor' tutor.id %}" class="acao-btn deletar">Apagar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Controles de paginação -->
+                <div class="paginacao">
+                    {% if tutores.has_previous %}
+                    <a href="?page=1" class="pagina-link">&laquo; Primeira</a>
+                    <a href="?page={{ tutores.previous_page_number }}" class="pagina-link">Anterior</a>
+                    {% endif %}
+
+                    <span class="pagina-atual">
+                        Página {{ tutores.number }} de {{ tutores.paginator.num_pages }}
+                    </span>
+
+                    {% if tutores.has_next %}
+                    <a href="?page={{ tutores.next_page_number }}" class="pagina-link">Próxima</a>
+                    <a href="?page={{ tutores.paginator.num_pages }}" class="pagina-link">Última &raquo;</a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+    {% else %}
+    <main class="conteudo">
+        <section class="conteudo-administrativo">
+            <p class="mensagem-erro">Usuário sem permissão para visualizar a página. Por favor, <a
+                    href="{% url 'login' %}" class="link-login">faça login</a>.</p>
+        </section>
+    </main>
+    {% endif %}
 
     {% include 'partials/footer.html' %}
-
 </body>
 
 </html>
