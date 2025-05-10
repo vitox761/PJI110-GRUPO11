@@ -24,10 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['castramariliapi2024-hza4haa4gkfab7f8.brazilsouth-01.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 # Application definition
 
 INSTALLED_APPS = [
@@ -91,7 +89,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "mydb",
         "USER": "root",
-        "PASSWORD": "123456",
+        "PASSWORD": "123456", # Adicione a sua senha do MySQL
         "HOST": "localhost",
         "PORT": "3306",
     }

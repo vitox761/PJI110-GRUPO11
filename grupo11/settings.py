@@ -24,8 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+ALLOWED_HOSTS = ['castramarilia2025-cmd4a3gggqbwetff.brazilsouth-01.azurewebsites.net/']
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,14 +89,14 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "mydb",
-        "USER": "root",
-        "PASSWORD": "123456", # Adicione a sua senha do MySQL
-        "HOST": "localhost",
+        "NAME": "castramarili2025-database",
+        "USER": "ibrsemauic",
+        "PASSWORD": "UnAoxxz$86y8tpUd",
+        "HOST": "castramarilia2025-server.mysql.database.azure.com",
         "PORT": "3306",
     }
 }
-
+castramarilia2025-server.mysql.database.azure.com
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
