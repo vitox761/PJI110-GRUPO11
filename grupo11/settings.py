@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-0g6r#3+@7nktwmd8ufuyck%$-p%akkr4%__b2g7+6bdb8+e8+!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['castramarilia2025-cmd4a3gggqbwetff.brazilsouth-01.azurewebsites.net/']
+ALLOWED_HOSTS = ['castramar2025-gwd2c8hrcmaha7h3.brazilsouth-01.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 # Application definition
 
@@ -89,14 +89,14 @@ WSGI_APPLICATION = "grupo11.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "castramarili2025-database",
-        "USER": "ibrsemauic",
-        "PASSWORD": "UnAoxxz$86y8tpUd",
-        "HOST": "castramarilia2025-server.mysql.database.azure.com",
+        "NAME": "castramar2025-database",
+        "USER": "tlnahdnjlu",
+        "PASSWORD": "fJvVOWTJJzXnV$RN",
+        "HOST": "castramar2025-server.mysql.database.azure.com",
         "PORT": "3306",
     }
 }
-castramarilia2025-server.mysql.database.azure.com
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
