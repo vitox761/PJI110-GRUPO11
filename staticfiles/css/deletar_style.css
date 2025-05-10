@@ -24,6 +24,7 @@ body {
 
 .cabecalho-menu {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
@@ -31,13 +32,36 @@ body {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: black;
+    color: #212121;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cabecalho-menu-item:hover {
-    color: #578ab4;
+    color: #4a7a94;
+}
+
+#logout-form {
+    display: inline-block;
+}
+
+#logout-form button {
+    border: none;
+    background-color: #4875A3;
+    color: #ffff;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    width: 80px;
+    line-height: 20px;
+}
+
+#logout-form button:hover {
+    background-color: #3E668E;
 }
 
 .mensagem {
@@ -50,12 +74,12 @@ body {
 
 .mensagem h1 {
     font-size: 32px;
-    color: #578ab4;
+    color: #4D77A8;
     margin-bottom: 20px;
 }
 
 .botao-voltar {
-    background-color: #578ab4;
+    background-color: #4875A3;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -66,12 +90,13 @@ body {
 }
 
 .botao-voltar:hover {
-    background-color: #417392;
+    background-color: #3E668E;
 }
 
 .botao-voltar-link {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .imagem-sucesso {
@@ -85,6 +110,28 @@ body {
 .imagem-sucesso img {
     max-width: 20%;
     height: auto;
+}
+
+.rodape {
+    background-color: #4D77A8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 48px;
+}
+
+.rodape-texto {
+    margin: 10px 0;
+}
+
+.rodape-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape-link:hover {
+    color: #c0d8e8;
 }
 
 @media only screen and (max-width: 600px) {
